@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		76059E6E2B8DE7C50089FE6F /* VideoVerveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76059E6D2B8DE7C50089FE6F /* VideoVerveApp.swift */; };
+		76059E702B8DE7C50089FE6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76059E6F2B8DE7C50089FE6F /* ContentView.swift */; };
+		76059E722B8DE7C70089FE6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76059E712B8DE7C70089FE6F /* Assets.xcassets */; };
+		76059E752B8DE7C70089FE6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76059E742B8DE7C70089FE6F /* Preview Assets.xcassets */; };
+		766AFE582B8DF1C300CFEEA4 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE572B8DF1C300CFEEA4 /* FeedView.swift */; };
+		766AFE5A2B8DF98C00CFEEA4 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE592B8DF98C00CFEEA4 /* FeedItem.swift */; };
+		766AFE5D2B8E039900CFEEA4 /* SampleVideo_1280x720_1mb.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 766AFE5C2B8E039900CFEEA4 /* SampleVideo_1280x720_1mb.mp4 */; };
+		766AFE602B8E08F400CFEEA4 /* FeedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE5F2B8E08F400CFEEA4 /* FeedList.swift */; };
+		766AFE642B8E100F00CFEEA4 /* Feeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE632B8E100F00CFEEA4 /* Feeds.swift */; };
+		766AFE682B8E120700CFEEA4 /* FeedsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE672B8E120700CFEEA4 /* FeedsModel.swift */; };
+		766AFE6A2B8E180F00CFEEA4 /* feedData.json in Resources */ = {isa = PBXBuildFile; fileRef = 766AFE692B8E180F00CFEEA4 /* feedData.json */; };
+		766AFE6E2B8E1FBB00CFEEA4 /* postData.json in Resources */ = {isa = PBXBuildFile; fileRef = 766AFE6D2B8E1FBB00CFEEA4 /* postData.json */; };
+		766AFE702B8E1FE900CFEEA4 /* profileData.json in Resources */ = {isa = PBXBuildFile; fileRef = 766AFE6F2B8E1FE900CFEEA4 /* profileData.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		76059E6A2B8DE7C50089FE6F /* VideoVerve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoVerve.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76059E6D2B8DE7C50089FE6F /* VideoVerveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoVerveApp.swift; sourceTree = "<group>"; };
+		76059E6F2B8DE7C50089FE6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		76059E712B8DE7C70089FE6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		76059E742B8DE7C70089FE6F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		766AFE572B8DF1C300CFEEA4 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		766AFE592B8DF98C00CFEEA4 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		766AFE5C2B8E039900CFEEA4 /* SampleVideo_1280x720_1mb.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SampleVideo_1280x720_1mb.mp4; sourceTree = "<group>"; };
+		766AFE5F2B8E08F400CFEEA4 /* FeedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedList.swift; sourceTree = "<group>"; };
+		766AFE632B8E100F00CFEEA4 /* Feeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeds.swift; sourceTree = "<group>"; };
+		766AFE672B8E120700CFEEA4 /* FeedsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsModel.swift; sourceTree = "<group>"; };
+		766AFE692B8E180F00CFEEA4 /* feedData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feedData.json; sourceTree = "<group>"; };
+		766AFE6D2B8E1FBB00CFEEA4 /* postData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = postData.json; sourceTree = "<group>"; };
+		766AFE6F2B8E1FE900CFEEA4 /* profileData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profileData.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		76059E672B8DE7C50089FE6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		76059E612B8DE7C50089FE6F = {
+			isa = PBXGroup;
+			children = (
+				76059E6C2B8DE7C50089FE6F /* VideoVerve */,
+				76059E6B2B8DE7C50089FE6F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		76059E6B2B8DE7C50089FE6F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				76059E6A2B8DE7C50089FE6F /* VideoVerve.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		76059E6C2B8DE7C50089FE6F /* VideoVerve */ = {
+			isa = PBXGroup;
+			children = (
+				76059E6D2B8DE7C50089FE6F /* VideoVerveApp.swift */,
+				766AFE622B8E0FF200CFEEA4 /* Models */,
+				766AFE612B8E0FCF00CFEEA4 /* Views */,
+				766AFE5B2B8E038200CFEEA4 /* Resources */,
+				76059E712B8DE7C70089FE6F /* Assets.xcassets */,
+				76059E732B8DE7C70089FE6F /* Preview Content */,
+			);
+			path = VideoVerve;
+			sourceTree = "<group>";
+		};
+		76059E732B8DE7C70089FE6F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				76059E742B8DE7C70089FE6F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		766AFE5B2B8E038200CFEEA4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				766AFE692B8E180F00CFEEA4 /* feedData.json */,
+				766AFE6D2B8E1FBB00CFEEA4 /* postData.json */,
+				766AFE6F2B8E1FE900CFEEA4 /* profileData.json */,
+				766AFE5C2B8E039900CFEEA4 /* SampleVideo_1280x720_1mb.mp4 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		766AFE5E2B8E078900CFEEA4 /* FeedView */ = {
+			isa = PBXGroup;
+			children = (
+				766AFE572B8DF1C300CFEEA4 /* FeedView.swift */,
+				766AFE592B8DF98C00CFEEA4 /* FeedItem.swift */,
+				766AFE5F2B8E08F400CFEEA4 /* FeedList.swift */,
+			);
+			path = FeedView;
+			sourceTree = "<group>";
+		};
+		766AFE612B8E0FCF00CFEEA4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				76059E6F2B8DE7C50089FE6F /* ContentView.swift */,
+				766AFE5E2B8E078900CFEEA4 /* FeedView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		766AFE622B8E0FF200CFEEA4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				766AFE632B8E100F00CFEEA4 /* Feeds.swift */,
+				766AFE672B8E120700CFEEA4 /* FeedsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		76059E692B8DE7C50089FE6F /* VideoVerve */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76059E782B8DE7C70089FE6F /* Build configuration list for PBXNativeTarget "VideoVerve" */;
+			buildPhases = (
+				76059E662B8DE7C50089FE6F /* Sources */,
+				76059E672B8DE7C50089FE6F /* Frameworks */,
+				76059E682B8DE7C50089FE6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VideoVerve;
+			productName = VideoVerve;
+			productReference = 76059E6A2B8DE7C50089FE6F /* VideoVerve.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		76059E622B8DE7C50089FE6F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					76059E692B8DE7C50089FE6F = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 76059E652B8DE7C50089FE6F /* Build configuration list for PBXProject "VideoVerve" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 76059E612B8DE7C50089FE6F;
+			productRefGroup = 76059E6B2B8DE7C50089FE6F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				76059E692B8DE7C50089FE6F /* VideoVerve */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		76059E682B8DE7C50089FE6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				766AFE5D2B8E039900CFEEA4 /* SampleVideo_1280x720_1mb.mp4 in Resources */,
+				76059E752B8DE7C70089FE6F /* Preview Assets.xcassets in Resources */,
+				76059E722B8DE7C70089FE6F /* Assets.xcassets in Resources */,
+				766AFE702B8E1FE900CFEEA4 /* profileData.json in Resources */,
+				766AFE6E2B8E1FBB00CFEEA4 /* postData.json in Resources */,
+				766AFE6A2B8E180F00CFEEA4 /* feedData.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		76059E662B8DE7C50089FE6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				766AFE5A2B8DF98C00CFEEA4 /* FeedItem.swift in Sources */,
+				76059E702B8DE7C50089FE6F /* ContentView.swift in Sources */,
+				766AFE582B8DF1C300CFEEA4 /* FeedView.swift in Sources */,
+				766AFE602B8E08F400CFEEA4 /* FeedList.swift in Sources */,
+				76059E6E2B8DE7C50089FE6F /* VideoVerveApp.swift in Sources */,
+				766AFE642B8E100F00CFEEA4 /* Feeds.swift in Sources */,
+				766AFE682B8E120700CFEEA4 /* FeedsModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		76059E762B8DE7C70089FE6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		76059E772B8DE7C70089FE6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		76059E792B8DE7C70089FE6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VideoVerve/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.VideoVerve;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		76059E7A2B8DE7C70089FE6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VideoVerve/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.VideoVerve;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		76059E652B8DE7C50089FE6F /* Build configuration list for PBXProject "VideoVerve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76059E762B8DE7C70089FE6F /* Debug */,
+				76059E772B8DE7C70089FE6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76059E782B8DE7C70089FE6F /* Build configuration list for PBXNativeTarget "VideoVerve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76059E792B8DE7C70089FE6F /* Debug */,
+				76059E7A2B8DE7C70089FE6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 76059E622B8DE7C50089FE6F /* Project object */;
+}

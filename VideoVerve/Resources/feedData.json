@@ -1,0 +1,20 @@
+{
+    "status": "success",
+    "data": [
+        {   "id": 1001,
+            "postId": "post_id_1",
+            "videoUrl": "https://example.com/videos/video1.mp4",
+            "thumbnail_url": "https://image.example.com/thumbnail1.png",
+            "username": "user123",
+            "likes": 56
+        },
+        {
+            "id": 1002,
+            "postId": "post_id_2",
+            "videoUrl": "https://example.com/videos/video2.mp4",
+            "thumbnail_url": "https://image.example.com/thumbnail2.png",
+            "username": "user456",
+            "likes": 102
+        }
+    ]
+}
