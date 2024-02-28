@@ -20,6 +20,11 @@
 		766AFE6A2B8E180F00CFEEA4 /* feedData.json in Resources */ = {isa = PBXBuildFile; fileRef = 766AFE692B8E180F00CFEEA4 /* feedData.json */; };
 		766AFE6E2B8E1FBB00CFEEA4 /* postData.json in Resources */ = {isa = PBXBuildFile; fileRef = 766AFE6D2B8E1FBB00CFEEA4 /* postData.json */; };
 		766AFE702B8E1FE900CFEEA4 /* profileData.json in Resources */ = {isa = PBXBuildFile; fileRef = 766AFE6F2B8E1FE900CFEEA4 /* profileData.json */; };
+		766AFE732B8F812A00CFEEA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE722B8F812A00CFEEA4 /* AppDelegate.swift */; };
+		766AFE752B8F821C00CFEEA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE742B8F821C00CFEEA4 /* SceneDelegate.swift */; };
+		766AFE772B8F82E400CFEEA4 /* SystemEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE762B8F82E400CFEEA4 /* SystemEventsHandler.swift */; };
+		766AFE792B8F8EE400CFEEA4 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE782B8F8EE400CFEEA4 /* AppEnvironment.swift */; };
+		766AFE7C2B8F913C00CFEEA4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE7B2B8F913C00CFEEA4 /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +42,11 @@
 		766AFE692B8E180F00CFEEA4 /* feedData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feedData.json; sourceTree = "<group>"; };
 		766AFE6D2B8E1FBB00CFEEA4 /* postData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = postData.json; sourceTree = "<group>"; };
 		766AFE6F2B8E1FE900CFEEA4 /* profileData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profileData.json; sourceTree = "<group>"; };
+		766AFE722B8F812A00CFEEA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		766AFE742B8F821C00CFEEA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		766AFE762B8F82E400CFEEA4 /* SystemEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEventsHandler.swift; sourceTree = "<group>"; };
+		766AFE782B8F8EE400CFEEA4 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		766AFE7B2B8F913C00CFEEA4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				76059E6D2B8DE7C50089FE6F /* VideoVerveApp.swift */,
+				766AFE712B8F810F00CFEEA4 /* System */,
+				766AFE7A2B8F912000CFEEA4 /* Utilities */,
 				766AFE622B8E0FF200CFEEA4 /* Models */,
 				766AFE612B8E0FCF00CFEEA4 /* Views */,
 				766AFE5B2B8E038200CFEEA4 /* Resources */,
@@ -124,6 +136,25 @@
 				766AFE672B8E120700CFEEA4 /* FeedsModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		766AFE712B8F810F00CFEEA4 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				766AFE722B8F812A00CFEEA4 /* AppDelegate.swift */,
+				766AFE742B8F821C00CFEEA4 /* SceneDelegate.swift */,
+				766AFE762B8F82E400CFEEA4 /* SystemEventsHandler.swift */,
+				766AFE782B8F8EE400CFEEA4 /* AppEnvironment.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		766AFE7A2B8F912000CFEEA4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				766AFE7B2B8F913C00CFEEA4 /* Store.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,13 +231,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				766AFE732B8F812A00CFEEA4 /* AppDelegate.swift in Sources */,
 				766AFE5A2B8DF98C00CFEEA4 /* FeedItem.swift in Sources */,
+				766AFE752B8F821C00CFEEA4 /* SceneDelegate.swift in Sources */,
+				766AFE7C2B8F913C00CFEEA4 /* Store.swift in Sources */,
 				76059E702B8DE7C50089FE6F /* ContentView.swift in Sources */,
+				766AFE772B8F82E400CFEEA4 /* SystemEventsHandler.swift in Sources */,
 				766AFE582B8DF1C300CFEEA4 /* FeedView.swift in Sources */,
 				766AFE602B8E08F400CFEEA4 /* FeedList.swift in Sources */,
 				76059E6E2B8DE7C50089FE6F /* VideoVerveApp.swift in Sources */,
 				766AFE642B8E100F00CFEEA4 /* Feeds.swift in Sources */,
 				766AFE682B8E120700CFEEA4 /* FeedsModel.swift in Sources */,
+				766AFE792B8F8EE400CFEEA4 /* AppEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
