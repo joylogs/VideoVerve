@@ -22,5 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-//    func sceneDelegate(_ application: UIApplication)
+    func sceneDelegate(_ application: UIApplication) -> SceneDelegate {
+        
+    }
 }

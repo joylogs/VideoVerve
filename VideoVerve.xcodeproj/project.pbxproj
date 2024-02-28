@@ -25,6 +25,8 @@
 		766AFE772B8F82E400CFEEA4 /* SystemEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE762B8F82E400CFEEA4 /* SystemEventsHandler.swift */; };
 		766AFE792B8F8EE400CFEEA4 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE782B8F8EE400CFEEA4 /* AppEnvironment.swift */; };
 		766AFE7C2B8F913C00CFEEA4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE7B2B8F913C00CFEEA4 /* Store.swift */; };
+		766AFE7F2B8FA8F000CFEEA4 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE7E2B8FA8F000CFEEA4 /* CoreDataStack.swift */; };
+		766AFE812B8FADC900CFEEA4 /* LazyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE802B8FADC900CFEEA4 /* LazyList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		766AFE762B8F82E400CFEEA4 /* SystemEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEventsHandler.swift; sourceTree = "<group>"; };
 		766AFE782B8F8EE400CFEEA4 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		766AFE7B2B8F913C00CFEEA4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		766AFE7E2B8FA8F000CFEEA4 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		766AFE802B8FADC900CFEEA4 /* LazyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		76059E6C2B8DE7C50089FE6F /* VideoVerve */ = {
 			isa = PBXGroup;
 			children = (
+				766AFE7D2B8FA8D800CFEEA4 /* Persistence */,
 				76059E6D2B8DE7C50089FE6F /* VideoVerveApp.swift */,
 				766AFE712B8F810F00CFEEA4 /* System */,
 				766AFE7A2B8F912000CFEEA4 /* Utilities */,
@@ -153,8 +158,17 @@
 			isa = PBXGroup;
 			children = (
 				766AFE7B2B8F913C00CFEEA4 /* Store.swift */,
+				766AFE802B8FADC900CFEEA4 /* LazyList.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		766AFE7D2B8FA8D800CFEEA4 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				766AFE7E2B8FA8F000CFEEA4 /* CoreDataStack.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +250,9 @@
 				766AFE752B8F821C00CFEEA4 /* SceneDelegate.swift in Sources */,
 				766AFE7C2B8F913C00CFEEA4 /* Store.swift in Sources */,
 				76059E702B8DE7C50089FE6F /* ContentView.swift in Sources */,
+				766AFE812B8FADC900CFEEA4 /* LazyList.swift in Sources */,
 				766AFE772B8F82E400CFEEA4 /* SystemEventsHandler.swift in Sources */,
+				766AFE7F2B8FA8F000CFEEA4 /* CoreDataStack.swift in Sources */,
 				766AFE582B8DF1C300CFEEA4 /* FeedView.swift in Sources */,
 				766AFE602B8E08F400CFEEA4 /* FeedList.swift in Sources */,
 				76059E6E2B8DE7C50089FE6F /* VideoVerveApp.swift in Sources */,
