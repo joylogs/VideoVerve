@@ -32,6 +32,6 @@ extension Feeds2: Identifiable {
 
 extension Feeds2 {
     struct Details: Codable, Equatable {
-                
+        
     }
 }
