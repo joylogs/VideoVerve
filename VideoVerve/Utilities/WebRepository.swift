@@ -42,7 +42,7 @@ extension Publisher where Output == URLSession.DataTaskPublisher.Output {
                 }
                 return $0.0
             }
-            .extractUnderlyingError()
+//            .extractUnderlyingError()
             .eraseToAnyPublisher()
     }
 }

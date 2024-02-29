@@ -10,11 +10,11 @@ import Foundation
 
 struct AppEnvironment {
     
-    static func bootstrap() -> AppEnvironment {
-        
-        let appState =
-        
-    }
+//    static func bootstrap() -> AppEnvironment {
+//
+////        let appState = Store(<#T##value: State##State#>)
+//
+//    }
 }
 
 
