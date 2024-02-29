@@ -59,4 +59,7 @@ extension VideoFeedsWebRepository.API: APICall {
     var headers: [String : String]? {
         return ["Accept": "application/json"]
     }
+    func body() throws -> Data? {
+        
+    }
 }
