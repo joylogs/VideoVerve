@@ -30,6 +30,7 @@
 		766AFE832B8FAFF200CFEEA4 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE822B8FAFF200CFEEA4 /* CancelBag.swift */; };
 		766AFE852B8FB11500CFEEA4 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE842B8FB11500CFEEA4 /* WebRepository.swift */; };
 		766AFE872B8FB14D00CFEEA4 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE862B8FB14D00CFEEA4 /* APICall.swift */; };
+		766AFE892B9072E500CFEEA4 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE882B9072E500CFEEA4 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		766AFE822B8FAFF200CFEEA4 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		766AFE842B8FB11500CFEEA4 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		766AFE862B8FB14D00CFEEA4 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
+		766AFE882B9072E500CFEEA4 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				766AFE822B8FAFF200CFEEA4 /* CancelBag.swift */,
 				766AFE842B8FB11500CFEEA4 /* WebRepository.swift */,
 				766AFE862B8FB14D00CFEEA4 /* APICall.swift */,
+				766AFE882B9072E500CFEEA4 /* Helpers.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				766AFE602B8E08F400CFEEA4 /* FeedList.swift in Sources */,
 				76059E6E2B8DE7C50089FE6F /* VideoVerveApp.swift in Sources */,
 				766AFE832B8FAFF200CFEEA4 /* CancelBag.swift in Sources */,
+				766AFE892B9072E500CFEEA4 /* Helpers.swift in Sources */,
 				766AFE852B8FB11500CFEEA4 /* WebRepository.swift in Sources */,
 				766AFE642B8E100F00CFEEA4 /* Feeds.swift in Sources */,
 				766AFE682B8E120700CFEEA4 /* FeedsModel.swift in Sources */,
