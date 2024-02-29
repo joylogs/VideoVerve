@@ -37,6 +37,7 @@
 		766AFE952B90BF0500CFEEA4 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE942B90BF0500CFEEA4 /* ActivityIndicatorView.swift */; };
 		766AFE982B90D2F700CFEEA4 /* db_v1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE962B90D2F700CFEEA4 /* db_v1.xcdatamodeld */; };
 		766AFE9A2B90D33B00CFEEA4 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE992B90D33B00CFEEA4 /* CoreDataHelpers.swift */; };
+		766AFE9D2B90F03200CFEEA4 /* FeedsWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE9C2B90F03200CFEEA4 /* FeedsWebRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		766AFE942B90BF0500CFEEA4 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		766AFE972B90D2F700CFEEA4 /* db_v1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db_v1.xcdatamodel; sourceTree = "<group>"; };
 		766AFE992B90D33B00CFEEA4 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
+		766AFE9C2B90F03200CFEEA4 /* FeedsWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsWebRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		76059E6C2B8DE7C50089FE6F /* VideoVerve */ = {
 			isa = PBXGroup;
 			children = (
+				766AFE9B2B90F00300CFEEA4 /* Repositories */,
 				76059E6D2B8DE7C50089FE6F /* VideoVerveApp.swift */,
 				766AFE7D2B8FA8D800CFEEA4 /* Persistence */,
 				766AFE712B8F810F00CFEEA4 /* System */,
@@ -233,6 +236,14 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		766AFE9B2B90F00300CFEEA4 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				766AFE9C2B90F03200CFEEA4 /* FeedsWebRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -316,6 +327,7 @@
 				766AFE9A2B90D33B00CFEEA4 /* CoreDataHelpers.swift in Sources */,
 				766AFE812B8FADC900CFEEA4 /* LazyList.swift in Sources */,
 				766AFE772B8F82E400CFEEA4 /* SystemEventsHandler.swift in Sources */,
+				766AFE9D2B90F03200CFEEA4 /* FeedsWebRepository.swift in Sources */,
 				766AFE932B90AB3B00CFEEA4 /* Loadable.swift in Sources */,
 				766AFE7F2B8FA8F000CFEEA4 /* CoreDataStack.swift in Sources */,
 				766AFE582B8DF1C300CFEEA4 /* FeedView.swift in Sources */,

@@ -29,3 +29,9 @@ struct FeedData2: Decodable {
 extension Feeds2: Identifiable {
 //    var id: String { postId }
 }
+
+extension Feeds2 {
+    struct Details: Codable, Equatable {
+                
+    }
+}
