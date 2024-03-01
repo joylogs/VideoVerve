@@ -52,7 +52,8 @@ extension VideoFeedsWebRepository.API: APICall {
     var path: String {
         switch self {
         case .allFeeds:
-            return "/65e068cedc74654018ab8616"
+//            return "/65e068cedc74654018ab8616"
+            return "//d83770329296476a73e0"
         case let .feedDetails(feed):
             return "/65e1d4621f5677401f36a148"
         }

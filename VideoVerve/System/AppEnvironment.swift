@@ -46,7 +46,7 @@ extension AppEnvironment {
     private static func configuredWebRepositories(session: URLSession) -> DIContainer.WebRepositories {
         let feedsWebRepository = VideoFeedsWebRepository(
             session: session,
-            baseURL: "https://api.jsonbin.io/v3/b/65e068cedc74654018ab8616")
+            baseURL: "https://api.npoint.io")
         return .init(feedsRepository: feedsWebRepository)
     }
     
@@ -71,9 +71,7 @@ extension AppEnvironment {
 
 extension DIContainer {
     struct WebRepositories {
-//        let imageRepository: ImageWebRepository
         let feedsRepository: FeedsWebRepository
-//        let pushTokenWebRepository: PushTokenWebRepository
     }
     
     struct DBRepositories {

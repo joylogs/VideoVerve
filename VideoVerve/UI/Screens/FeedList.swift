@@ -10,7 +10,6 @@ import Combine
 
 struct FeedList: View {
     
-//    @EnvironmentObject var feedData: FeedsModel
     @State private(set) var feeds: Loadable<LazyList<Feed>>
     @State private var routingState: Routing = .init()
     private var routingBinding: Binding<Routing> {
@@ -50,8 +49,6 @@ private extension FeedList {
     }
     
     func requestPushPermission() {
-//        injected.interactors.userPermissionsInteractor
-//            .request(permission: .pushNotifications)
     }
 }
 

@@ -13,7 +13,6 @@ protocol FeedsDBRepository {
     
     func store(feeds: [Feed]) -> AnyPublisher<Void, Error>
 //    func store(feedDetails: Feed.Details, for feed: Feed) -> AnyPublisher<Feed.Details?, Error>
-//    
 //    func feedDetails(feed: Feed) -> AnyPublisher<Feed.Details?, Error>
     
     func feeds(search: String) -> AnyPublisher<LazyList<Feed>, Error>
