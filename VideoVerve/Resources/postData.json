@@ -1,10 +1,10 @@
 {
-  "status": "success",
-  "data": {
-    "postId": "post_id_3",
-    "videoUrl": "https://example.com/videos/video3.mp4",
-    "thumbnail_url": "https://image.example.com/thumbnail3.png",
-    "username": "user123",
-    "likes": 0
-  }
+    "status": "success",
+    "data": {
+        "postId": "post_id_3",
+        "videoUrl": "https://example.com/videos/video3.mp4",
+        "thumbnail_url": "https://image.example.com/thumbnail3.png",
+        "username": "user123",
+        "likes": 0
+    }
 }

@@ -7,13 +7,14 @@
 
 import UIKit
 
-
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    lazy var systemEventsHandler: SystemEventsHandler? = {
+        self.systemEventsHandler(UIApplication.shared)
+    }()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        
-        
-        
         return true
     }
     
@@ -25,7 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    func sceneDelegate(_ application: UIApplication) -> SceneDelegate {
-        
+    private func systemEventsHandler(_ application: UIApplication) -> SystemEventsHandler? {
+        return sceneDelegate(application)?.systemEventsHandler
+    }
+    
+    func sceneDelegate(_ application: UIApplication) -> SceneDelegate? {
+        return application.windows
+            .compactMap({ $0.windowScene?.delegate as? SceneDelegate })
+            .first
     }
 }

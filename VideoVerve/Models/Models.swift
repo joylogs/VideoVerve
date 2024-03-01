@@ -7,11 +7,10 @@
 
 import Foundation
 
-struct Feeds2: Codable, Equatable {
+struct Feed: Codable, Equatable {
     
     typealias Code = String
     
-    var id: Int
     var postId: Code
     var videoUrl: String
     var thumbnail_url: String
@@ -22,15 +21,15 @@ struct Feeds2: Codable, Equatable {
 
 struct FeedData2: Decodable {
     var status: String
-    var data: [Feeds2]
+    var data: [Feed]
 }
 
 
-extension Feeds2: Identifiable {
-//    var id: String { postId }
+extension Feed: Identifiable {
+    var id: String { postId }
 }
 
-extension Feeds2 {
+extension Feed {
     struct Details: Codable, Equatable {
         
     }

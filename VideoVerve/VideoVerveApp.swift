@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-@main
-struct VideoVerveApp: App {
-    
-    private var feedsData = FeedsModel()
-    
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environmentObject(feedsData)
-        }
-    }
-}
+//@main
+//struct VideoVerveApp: App {
+//    
+//    private var feedsData = FeedsModel()
+//    
+//    var body: some Scene {
+//        WindowGroup {
+//            ContentView()
+//                .environmentObject(feedsData)
+//        }
+//    }
+//}

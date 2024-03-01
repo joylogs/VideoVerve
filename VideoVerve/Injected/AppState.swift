@@ -30,7 +30,7 @@ extension AppState {
 
 extension AppState {
     struct System: Equatable {
-        
+        var isActive: Bool = false
     }
 }
 
@@ -39,3 +39,14 @@ func == (lhs: AppState, rhs: AppState) -> Bool {
     lhs.routing == rhs.routing &&
     lhs.system == rhs.system
 }
+
+
+#if DEBUG
+extension AppState {
+    static var preview: AppState {
+        var appState = AppState()
+        appState.system.isActive = true
+        return appState
+    }
+}
+#endif

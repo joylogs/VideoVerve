@@ -8,7 +8,7 @@
 import Foundation
 
 class FeedsModel: ObservableObject {
-    @Published var data: FeedData = load("feedData.json")
+//    @Published var data: FeedData = load("feedData.json")
 }
 
 

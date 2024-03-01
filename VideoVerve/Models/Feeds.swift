@@ -8,18 +8,18 @@
 import Foundation
 
 
-struct Feeds: Identifiable, Decodable {
-    
-    var id: Int
-    var postId: String
-    var videoUrl: String
-    var thumbnail_url: String
-    var username: String
-    var likes: Int
-    
-}
-
-struct FeedData: Decodable {
-    var status: String
-    var data: [Feeds]
-}
+//struct Feeds: Identifiable, Decodable {
+//    
+//    var id: Int
+//    var postId: String
+//    var videoUrl: String
+//    var thumbnail_url: String
+//    var username: String
+//    var likes: Int
+//    
+//}
+//
+//struct FeedData: Decodable {
+//    var status: String
+//    var data: [Feeds]
+//}

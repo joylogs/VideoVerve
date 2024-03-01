@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 protocol FeedsWebRepository: WebRepository {
-    func loadFeeds() -> AnyPublisher<[Feeds2], Error>
-    func loadFeedDetails(feed: Feeds2) -> AnyPublisher<Feeds2.Details, Error>
+    func loadFeeds() -> AnyPublisher<[Feed], Error>
+    func loadFeedDetails(feed: Feed) -> AnyPublisher<Feed.Details, Error>
 }
 
 
@@ -25,19 +25,26 @@ struct VideoFeedsWebRepository: FeedsWebRepository {
         self.baseURL = baseURL
     }
     
-    func loadFeeds() -> AnyPublisher<[Feeds2], Error> {
-//        return call(endpoint:)
+    func loadFeeds() -> AnyPublisher<[Feed], Error> {
+        return call(endpoint: API.allFeeds)
     }
     
-    func loadFeedDetails(feed: Feeds2) -> AnyPublisher<Feeds2.Details, Error> {
-        
+    func loadFeedDetails(feed: Feed) -> AnyPublisher<Feed.Details, Error> {
+        let request: AnyPublisher<[Feed.Details], Error> = call(endpoint: API.feedDetails(feed))
+        return request
+            .tryMap { array -> Feed.Details in
+                guard let details = array.first
+                    else { throw APIError.unexpectedResponse }
+                return details
+            }
+            .eraseToAnyPublisher()
     }
 }
 
 extension VideoFeedsWebRepository {
     enum API {
         case allFeeds
-        case feedDetails(Feeds2)
+        case feedDetails(Feed)
     }
 }
 
@@ -45,9 +52,9 @@ extension VideoFeedsWebRepository.API: APICall {
     var path: String {
         switch self {
         case .allFeeds:
-            return ""
+            return "/65e068cedc74654018ab8616"
         case let .feedDetails(feed):
-            return ""
+            return "/65e1d4621f5677401f36a148"
         }
     }
     var method: String {

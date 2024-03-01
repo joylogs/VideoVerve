@@ -13,17 +13,18 @@ protocol SystemEventsHandler {
 }
 
 struct AppSystemEventsHandler: SystemEventsHandler {
+    let container: DIContainer
+    private var cancelBag = CancelBag()
     
-    
-//    private var cancelBag
-    
+    init(container: DIContainer) {
+        self.container = container
+    }
     
     func sceneDidBecomeActive() {
-        
+        container.appState[\.system.isActive] = true
     }
     
     func sceneWillResignActive() {
-        
+        container.appState[\.system.isActive] = false
     }
-    
 }

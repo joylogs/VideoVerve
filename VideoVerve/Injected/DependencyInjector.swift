@@ -24,7 +24,7 @@ struct DIContainer: EnvironmentKey {
     
     static var defaultValue: Self { Self.default }
     
-    private static let `default` = Self(appState: AppState(), interactors: .stub)
+    private static let `default` = Self(appState: AppState(), interactors: .empty)
 }
 
 extension EnvironmentValues {
@@ -37,7 +37,7 @@ extension EnvironmentValues {
 #if DEBUG
 extension DIContainer {
     static var preview: Self {
-        .init(appState: .init(AppState.preview), interactors: .stub)
+        .init(appState: .init(AppState.preview), interactors: .empty)
     }
 }
 #endif

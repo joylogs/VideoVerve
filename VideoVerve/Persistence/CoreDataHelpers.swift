@@ -12,9 +12,9 @@ protocol ManagedEntity: NSFetchRequestResult {}
 extension ManagedEntity where Self: NSManagedObject {
     
     static var entityName: String {
-        let nameManagedObject = String(describing: Self.self)
-        let suffixIndex = nameManagedObject.index(nameManagedObject.endIndex, offsetBy: -2)
-        return String(nameManagedObject[..<suffixIndex])
+        let nameMO = String(describing: Self.self)
+        let suffixIndex = nameMO.index(nameMO.endIndex, offsetBy: -2)
+        return String(nameMO[..<suffixIndex])
     }
     
     static func insertNew(in context: NSManagedObjectContext) -> Self? {
@@ -41,5 +41,13 @@ extension NSManagedObjectContext {
     func configureAsUpdateContext() {
         mergePolicy = NSOverwriteMergePolicy
         undoManager = nil
+    }
+}
+
+// MARK: - Misc
+
+extension NSSet {
+    func toArray<T>(of type: T.Type) -> [T] {
+        allObjects.compactMap { $0 as? T }
     }
 }

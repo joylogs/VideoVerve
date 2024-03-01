@@ -6,17 +6,20 @@
 //
 
 import SwiftUI
+import Combine
 
 struct FeedList: View {
     
 //    @EnvironmentObject var feedData: FeedsModel
-    @State private var feeds: Loadable<LazyList<Feeds2>>
+    @State private(set) var feeds: Loadable<LazyList<Feed>>
     @State private var routingState: Routing = .init()
+    private var routingBinding: Binding<Routing> {
+        $routingState.dispatched(to: injected.appState, \.routing.feedsList)
+    }
+    @Environment(\.injected) private var injected: DIContainer
     
-    
-    init(feeds: Loadable<LazyList<Feeds2>> = .notRequested) {
-//        self.feedData = feedData
-        self.feeds = feeds
+    init(feeds: Loadable<LazyList<Feed>> = .notRequested) {
+        self._feeds = .init(initialValue: feeds)
     }
     
     var body: some View {
@@ -28,21 +31,36 @@ struct FeedList: View {
     @ViewBuilder private var content: some View {
         switch feeds {
         case .notRequested:
-            Text("TestText")
+            notRequestedView
         case let .isLoading(last, _):
-            Text("TestText")
+            loadingView(last)
         case let .loaded(feeds):
-            Text("TestText")
+            loadedView(feeds, showLoading: false)
         case let .failed(error):
-            Text("TestText")
+            failedView(error)
         }
     }
 }
 
+
+private extension FeedList {
+    func reloadFeeds() {
+        injected.interactors.feedsInteractor
+            .load(feeds: $feeds)
+    }
+    
+    func requestPushPermission() {
+//        injected.interactors.userPermissionsInteractor
+//            .request(permission: .pushNotifications)
+    }
+}
+
+
+
 // MARK: - DISPLAYING CONTENT
 
 extension FeedList {
-    func loadedView(_ feeds: LazyList<Feeds2>, showLoading: Bool) -> some View {
+    func loadedView(_ feeds: LazyList<Feed>, showLoading: Bool) -> some View {
         VStack {
             if showLoading {
                 ActivityIndicatorView().padding()
@@ -56,11 +74,32 @@ extension FeedList {
     }
 }
 
+private extension FeedList {
+    var notRequestedView: some View {
+        Text("").onAppear(perform: reloadFeeds)
+    }
+    
+    func loadingView(_ previouslyLoaded: LazyList<Feed>?) -> some View {
+        if let feeds = previouslyLoaded {
+            return AnyView(loadedView(feeds, showLoading: true))
+        } else {
+            return AnyView(ActivityIndicatorView().padding())
+        }
+    }
+    
+    func failedView(_ error: Error) -> some View {
+        ErrorView(error: error, retryAction: {
+            self.reloadFeeds()
+        })
+    }
+}
+
+
 // MARK: - ROUTING
 
 extension FeedList {
     struct Routing: Equatable {
-        var feedDetails: Feeds2.Code?
+        var feedDetails: Feed.Code?
     }
 }
 
