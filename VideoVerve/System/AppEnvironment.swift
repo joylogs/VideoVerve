@@ -29,8 +29,12 @@ struct AppEnvironment {
         
     }
     
-    private static func configuredWebRepositories(session: URLSession) {
-        let feedsWebRepository = 
+    private static func configuredWebRepositories(session: URLSession) ->  {
+        let feedsWebRepository = VideoFeedsWebRepository(
+            session: session,
+            baseURL: "https://api.jsonbin.io/v3/b/65e068cedc74654018ab8616")
+//        let imageWebRepository =
+        return .init()
     }
 }
 

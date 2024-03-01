@@ -59,7 +59,7 @@ extension FeedList {
 // MARK: - ROUTING
 
 extension FeedList {
-    struct Routing {
+    struct Routing: Equatable {
         var feedDetails: Feeds2.Code?
     }
 }

@@ -38,6 +38,9 @@
 		766AFE982B90D2F700CFEEA4 /* db_v1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE962B90D2F700CFEEA4 /* db_v1.xcdatamodeld */; };
 		766AFE9A2B90D33B00CFEEA4 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE992B90D33B00CFEEA4 /* CoreDataHelpers.swift */; };
 		766AFE9D2B90F03200CFEEA4 /* FeedsWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE9C2B90F03200CFEEA4 /* FeedsWebRepository.swift */; };
+		766AFE9F2B91079300CFEEA4 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE9E2B91079300CFEEA4 /* DependencyInjector.swift */; };
+		766AFEA12B91085600CFEEA4 /* InteractorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFEA02B91085600CFEEA4 /* InteractorsContainer.swift */; };
+		766AFEA42B91CFB000CFEEA4 /* FeedsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFEA32B91CFB000CFEEA4 /* FeedsInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +76,9 @@
 		766AFE972B90D2F700CFEEA4 /* db_v1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db_v1.xcdatamodel; sourceTree = "<group>"; };
 		766AFE992B90D33B00CFEEA4 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		766AFE9C2B90F03200CFEEA4 /* FeedsWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsWebRepository.swift; sourceTree = "<group>"; };
+		766AFE9E2B91079300CFEEA4 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		766AFEA02B91085600CFEEA4 /* InteractorsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorsContainer.swift; sourceTree = "<group>"; };
+		766AFEA32B91CFB000CFEEA4 /* FeedsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 		76059E6C2B8DE7C50089FE6F /* VideoVerve */ = {
 			isa = PBXGroup;
 			children = (
+				766AFEA22B91CF7500CFEEA4 /* Interactors */,
 				766AFE9B2B90F00300CFEEA4 /* Repositories */,
 				76059E6D2B8DE7C50089FE6F /* VideoVerveApp.swift */,
 				766AFE7D2B8FA8D800CFEEA4 /* Persistence */,
@@ -224,6 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				766AFE8F2B90A8F700CFEEA4 /* AppState.swift */,
+				766AFEA02B91085600CFEEA4 /* InteractorsContainer.swift */,
+				766AFE9E2B91079300CFEEA4 /* DependencyInjector.swift */,
 			);
 			path = Injected;
 			sourceTree = "<group>";
@@ -242,6 +251,14 @@
 				766AFE9C2B90F03200CFEEA4 /* FeedsWebRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		766AFEA22B91CF7500CFEEA4 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				766AFEA32B91CFB000CFEEA4 /* FeedsInteractor.swift */,
+			);
+			path = Interactors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +347,7 @@
 				766AFE9D2B90F03200CFEEA4 /* FeedsWebRepository.swift in Sources */,
 				766AFE932B90AB3B00CFEEA4 /* Loadable.swift in Sources */,
 				766AFE7F2B8FA8F000CFEEA4 /* CoreDataStack.swift in Sources */,
+				766AFEA12B91085600CFEEA4 /* InteractorsContainer.swift in Sources */,
 				766AFE582B8DF1C300CFEEA4 /* FeedView.swift in Sources */,
 				766AFE602B8E08F400CFEEA4 /* FeedList.swift in Sources */,
 				766AFE902B90A8F700CFEEA4 /* AppState.swift in Sources */,
@@ -339,7 +357,9 @@
 				766AFE852B8FB11500CFEEA4 /* WebRepository.swift in Sources */,
 				766AFE952B90BF0500CFEEA4 /* ActivityIndicatorView.swift in Sources */,
 				766AFE982B90D2F700CFEEA4 /* db_v1.xcdatamodeld in Sources */,
+				766AFEA42B91CFB000CFEEA4 /* FeedsInteractor.swift in Sources */,
 				766AFE8D2B9093F800CFEEA4 /* Models.swift in Sources */,
+				766AFE9F2B91079300CFEEA4 /* DependencyInjector.swift in Sources */,
 				766AFE642B8E100F00CFEEA4 /* Feeds.swift in Sources */,
 				766AFE682B8E120700CFEEA4 /* FeedsModel.swift in Sources */,
 				766AFE792B8F8EE400CFEEA4 /* AppEnvironment.swift in Sources */,
