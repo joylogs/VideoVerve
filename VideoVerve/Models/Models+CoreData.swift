@@ -58,6 +58,8 @@ extension Feed.Details {
         guard let details = FeedDetailsMO.insertNew(in: context)
             else { return nil }
 //       Store any further Info needed
+        details.profileUrl = profileUrl
+        feed.feedDetails = details
         return details
     }
 }

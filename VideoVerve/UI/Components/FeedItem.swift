@@ -13,14 +13,17 @@ struct FeedItem: View {
     let feed: Feed
     
     @State var player = AVPlayer(url: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4")!)
-//    AVPlayer(url: Bundle.main.url(forResource: "SampleVideo_1280x720_1mb",
-//                                                      withExtension: "mp4")!)
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("\(feed.username)")
-                .font(.callout)
-                .bold()
+            HStack {
+                CircleImage(image: Image("turtlerock"))
+                .scaleEffect(1.0 / 3.0)
+
+                Text("\(feed.username)")
+                    .font(.callout)
+                    .bold()
+            }
             VideoPlayer(player: player)
                 .frame(width: 320, height: 180, alignment: .top)
             
@@ -28,8 +31,6 @@ struct FeedItem: View {
                 Text("\(feed.likes) Likes")
                     .font(.caption)
             }
-//            .padding(EdgeInsets(top: 5, leading: 35, bottom: 0, trailing: 0))
-//            Spacer()
             Divider()
         }
     }

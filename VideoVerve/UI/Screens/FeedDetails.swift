@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct FeedDetails: View {
-        
+    
     let feed: Feed
     @Environment(\.injected) private var injected: DIContainer
     @State private var details: Loadable<Feed.Details>
@@ -25,11 +25,11 @@ struct FeedDetails: View {
     
     var body: some View {
         content
-            .navigationTitle(feed.username)
+            .navigationTitle(feed.postId)
             .navigationBarTitleDisplayMode(.inline)
             .onReceive(routingUpdate) { self.routingState = $0 }
     }
-        
+    
     @ViewBuilder private var content: some View {
         switch details {
         case .notRequested:
@@ -80,59 +80,38 @@ private extension FeedDetails {
 
 private extension FeedDetails {
     func loadedView(_ feedDetails: Feed.Details) -> some View {
-        List {
-//            country.flag.map { url in
-//                flagView(url: url)
-//            }
-//            basicInfoSectionView(countryDetails: countryDetails)
-//            if countryDetails.currencies.count > 0 {
-//                currenciesSectionView(currencies: countryDetails.currencies)
-//            }
-//            if countryDetails.neighbors.count > 0 {
-//                neighborsSectionView(neighbors: countryDetails.neighbors)
-//            }
-            //TO DO: Check if the below can be incorporated
-            ScrollView {
-                
-                CircleImage(image: feedDetails.profile_url)
-                    .offset(y: -130)
-                    .padding(.bottom, -130)
-                
-                VStack(alignment: .leading) {
-                    HStack{
-                        Text(feed.username)
-                            .font(.title)
-                            .foregroundColor(.black)
-    //                    FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
-                    }
-                    HStack {
-                        Text("")
-                        Spacer()
-                        Text("\(feed.likes) Likes")
-                    }
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    
-                    Divider()
-                    Text("About \(feed.username)")
-                        .font(.title2)
-                    Text("description")
+        //TO DO: Check if the below can be incorporated
+        ScrollView {
+            CircleImage(image: feedDetails.profile_url)
+                .offset(y: 10)
+                .padding(.bottom, 10)
+            
+            VStack(alignment: .leading) {
+                HStack{
+                    Text(feed.username)
+                        .font(.title)
+                        .foregroundColor(.black)
+                    Spacer()
+                    Text("\(feed.likes) Likes")
                 }
-                .padding()
+                
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                
+                Divider()
+                Text("About \(feed.postId)")
+                    .font(.title2)
+                Text("description")
             }
-//            .navigationTitle(feed.postId)
-//            .navigationBarTitleDisplayMode(.inline)
+            .padding()
         }
-        .listStyle(GroupedListStyle())
-//        .sheet(isPresented: routingBinding.detailsSheet,
-//               content: { self.modalDetailsView() })
     }
     
 }
 
 private extension Feed.Details {
     var profile_url: Image {
-        return Image(profileUrl ?? "")
+        return Image("turtlerock")
     }
 }
 
