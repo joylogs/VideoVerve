@@ -35,11 +35,6 @@ struct Feed: Codable, Equatable {
     }
 }
 
-//struct FeedData2: Decodable {
-//    var status: String
-//    var data: [Feed]
-//}
-
 extension Feed: Identifiable {
     var id: String { postId }
 }

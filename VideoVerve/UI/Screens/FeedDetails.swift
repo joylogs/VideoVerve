@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import AVKit
 
 struct FeedDetails: View {
     
@@ -99,6 +100,10 @@ private extension FeedDetails {
                 .foregroundStyle(.secondary)
                 
                 Divider()
+                                
+                VideoPlayer(player: player(feed: feed))
+                    .frame(width: 320, height: 180, alignment: .center)
+                
                 Text("About \(feed.postId)")
                     .font(.title2)
                 Text("description")
@@ -107,6 +112,11 @@ private extension FeedDetails {
         }
     }
     
+    func player(feed: Feed) -> AVPlayer {
+        //Ignoring the feed Url for now
+        let p = AVPlayer(url: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4")!)
+        return p
+    }
 }
 
 private extension Feed.Details {
