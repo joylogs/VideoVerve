@@ -26,6 +26,7 @@ struct ProfileSummary: View {
             NavigationView {
                 self.content
                     .navigationTitle("My Feeds")
+                    .navigationBarTitleDisplayMode(.inline)
             }
             .navigationViewStyle(DoubleColumnNavigationViewStyle())
         }
@@ -68,10 +69,20 @@ extension ProfileSummary {
             if showLoading {
                 ActivityIndicatorView().padding()
             }
+            CircleImage(image: Image("turtlerock"))
+                .scaleEffect(1.0/1.5, anchor: .top)
+            
+            Text("username")
+                .bold()
+                .font(.title3)
+            Divider()
+                .bold()
+            
             List(profileFeeds) { profile in
                 ProfileRow(profile: profile)
-//                .listRowSeparator(.hidden)
+                .listRowSeparator(.hidden)
             }
+            
             .id(profileFeeds.count)
         }
     }

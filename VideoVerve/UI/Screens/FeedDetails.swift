@@ -83,14 +83,13 @@ private extension FeedDetails {
     func loadedView(_ feedDetails: Feed.Details) -> some View {
         //TO DO: Check if the below can be incorporated
         ScrollView {
-            CircleImage(image: feedDetails.profile_url)
-                .offset(y: 10)
-                .padding(.bottom, 10)
             
             VStack(alignment: .leading) {
                 HStack{
+                    CircleImage(image: feedDetails.profile_url)
+                        .scaleEffect(1.0 / 2.0)
                     Text(feed.username)
-                        .font(.title)
+                        .font(.title2)
                         .foregroundColor(.black)
                     Spacer()
                     Text("\(feed.likes) Likes")
@@ -104,8 +103,11 @@ private extension FeedDetails {
                 VideoPlayer(player: player(feed: feed))
                     .frame(width: 320, height: 180, alignment: .center)
                 
+                Divider()
+                
                 Text("About \(feed.postId)")
                     .font(.title2)
+                Spacer()
                 Text(feedDetails.feedDescription)
             }
             .padding()

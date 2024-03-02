@@ -15,9 +15,6 @@ struct ProfileRow: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                CircleImage(image: Image("turtlerock"))
-                .scaleEffect(1.0 / 3.0)
-
                 Text("\(profile.postId)")
                     .font(.callout)
                     .bold()
