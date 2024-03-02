@@ -22,9 +22,14 @@ struct FeedList: View {
     }
     
     var body: some View {
-        NavigationView {
-            self.content
+        GeometryReader { geometry in
+            NavigationView {
+                self.content
+                    .navigationTitle("Feeds")
+            }
+            .navigationViewStyle(DoubleColumnNavigationViewStyle())
         }
+        .onReceive(routingUpdate) { self.routingState = $0 }
     }
     
     @ViewBuilder private var content: some View {
@@ -47,12 +52,13 @@ private extension FeedList {
         injected.interactors.feedsInteractor
             .load(feeds: $feeds)
     }
-    
-    func requestPushPermission() {
-    }
 }
 
-
+private extension FeedList {
+    var routingUpdate: AnyPublisher<Routing, Never> {
+        injected.appState.updates(for: \.routing.feedsList)
+    }
+}
 
 // MARK: - DISPLAYING CONTENT
 
@@ -62,12 +68,27 @@ extension FeedList {
             if showLoading {
                 ActivityIndicatorView().padding()
             }
-            
             List(feeds) { feed in
-                FeedItem()
+                NavigationLink (
+                    destination: self.detailsView(feed: feed),
+                    tag: feed.postId,
+                    selection: self.routingBinding.feedDetails) {
+                        FeedItem(feed: feed)
+                            
+                    }
+                    .listRowSeparator(.hidden)
+            }
+            .refreshable {
+                DispatchQueue.main.async {
+                    self.reloadFeeds()
+                }
             }
             .id(feeds.count)
         }
+    }
+    
+    func detailsView(feed: Feed) -> some View {
+        FeedDetails(feed: feed)
     }
 }
 
@@ -102,7 +123,6 @@ extension FeedList {
 
 struct FeedList_Previews: PreviewProvider {
     static var previews: some View {
-        FeedList()
-            .environmentObject(FeedsModel())
+        FeedList(feeds: .loaded(Feed.mockedData.lazyList))
     }
 }

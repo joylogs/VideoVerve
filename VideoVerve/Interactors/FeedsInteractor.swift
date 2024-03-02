@@ -11,7 +11,7 @@ import Combine
 protocol FeedsInteractor {
     func refreshFeedsList() -> AnyPublisher<Void, Error>
     func load(feeds: LoadableSubject<LazyList<Feed>>)
-//    func load(feedDetails: LoadableSubject<Feed.Details>, feed: Feed)
+    func load(feedDetails: LoadableSubject<Feed.Details>, feed: Feed)
 }
 
 struct VideoFeedsInteractor: FeedsInteractor {
@@ -40,22 +40,32 @@ struct VideoFeedsInteractor: FeedsInteractor {
             .store(in: cancelBag)
     }
     
-//    func load(feedDetails: LoadableSubject<Feed.Details>, feed: Feed) {
-//        let cancelBag = CancelBag()
-//        feedDetails.wrappedValue.setIsLoading(cancelBag: cancelBag)
-//
-//        dbRepository
-//            .feedDetails()
-//            .flatMap { details -> AnyPublisher<Country.Details?, Error> in
-//                if details != nil {
-//                    return Just<Country.Details?>.withErrorType(details, Error.self)
-//                } else {
-//                    return self.loadAndStoreCountryDetailsFromWeb(country: country)
-//                }
-//            }
-//            .sinkToLoadable { countryDetails.wrappedValue = $0.unwrap() }
-//            .store(in: cancelBag)
-//    }
+    func load(feedDetails: LoadableSubject<Feed.Details>, feed: Feed) {
+        let cancelBag = CancelBag()
+        feedDetails.wrappedValue.setIsLoading(cancelBag: cancelBag)
+
+        dbRepository
+            .feedDetails(feed: feed)
+            .flatMap { details -> AnyPublisher<Feed.Details?, Error> in
+                if details != nil {
+                    return Just<Feed.Details?>.withErrorType(details, Error.self)
+                } else {
+                    return self.loadAndStoreFeedDetailsFromWeb(feed: feed)
+                }
+            }
+            .sinkToLoadable { feedDetails.wrappedValue = $0.unwrap() }
+            .store(in: cancelBag)
+    }
+    
+    private func loadAndStoreFeedDetailsFromWeb(feed: Feed) -> AnyPublisher<Feed.Details?, Error> {
+        return webRepository
+            .loadFeedDetails(feed: feed)
+            .ensureTimeSpan(requestHoldBackTimeInterval)
+            .flatMap { [dbRepository] in
+                dbRepository.store(feedDetails: $0, for: feed)
+            }
+            .eraseToAnyPublisher()
+    }
     
     func refreshFeedsList() -> AnyPublisher<Void, Error> {
         return webRepository

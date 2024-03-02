@@ -6,5 +6,10 @@
         <attribute name="thumbnail_url" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
         <attribute name="videoUrl" optional="YES" attributeType="String"/>
+        <relationship name="feedDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FeedDetails" inverseName="feed" inverseEntity="FeedDetails"/>
+    </entity>
+    <entity name="FeedDetails" representedClassName="FeedDetailsMO" syncable="YES" codeGenerationType="class">
+        <attribute name="profileUrl" optional="YES" attributeType="String"/>
+        <relationship name="feed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Feed" inverseName="feedDetails" inverseEntity="Feed"/>
     </entity>
 </model>

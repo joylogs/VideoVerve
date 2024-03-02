@@ -13,6 +13,9 @@
 		76059E752B8DE7C70089FE6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76059E742B8DE7C70089FE6F /* Preview Assets.xcassets */; };
 		7606D2662B921743009AF1C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7606D2652B921743009AF1C3 /* LaunchScreen.storyboard */; };
 		7606D26A2B921EAE009AF1C3 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7606D2692B921EAE009AF1C3 /* ErrorView.swift */; };
+		7606D26C2B9253FA009AF1C3 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7606D26B2B9253FA009AF1C3 /* MockedData.swift */; };
+		7606D26E2B92F9BB009AF1C3 /* FeedDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7606D26D2B92F9BB009AF1C3 /* FeedDetails.swift */; };
+		7606D2722B936B26009AF1C3 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7606D2712B936B26009AF1C3 /* CircleImage.swift */; };
 		766AFE582B8DF1C300CFEEA4 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE572B8DF1C300CFEEA4 /* FeedView.swift */; };
 		766AFE5A2B8DF98C00CFEEA4 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE592B8DF98C00CFEEA4 /* FeedItem.swift */; };
 		766AFE5D2B8E039900CFEEA4 /* SampleVideo_1280x720_1mb.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 766AFE5C2B8E039900CFEEA4 /* SampleVideo_1280x720_1mb.mp4 */; };
@@ -58,6 +61,9 @@
 		7606D2652B921743009AF1C3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7606D2672B921834009AF1C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7606D2692B921EAE009AF1C3 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		7606D26B2B9253FA009AF1C3 /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
+		7606D26D2B92F9BB009AF1C3 /* FeedDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetails.swift; sourceTree = "<group>"; };
+		7606D2712B936B26009AF1C3 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		766AFE572B8DF1C300CFEEA4 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		766AFE592B8DF98C00CFEEA4 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		766AFE5C2B8E039900CFEEA4 /* SampleVideo_1280x720_1mb.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SampleVideo_1280x720_1mb.mp4; sourceTree = "<group>"; };
@@ -135,8 +141,6 @@
 				766AFE8A2B90937500CFEEA4 /* UI */,
 				766AFE612B8E0FCF00CFEEA4 /* Views */,
 				766AFE5B2B8E038200CFEEA4 /* Resources */,
-				76059E712B8DE7C70089FE6F /* Assets.xcassets */,
-				76059E732B8DE7C70089FE6F /* Preview Content */,
 			);
 			path = VideoVerve;
 			sourceTree = "<group>";
@@ -152,6 +156,8 @@
 		766AFE5B2B8E038200CFEEA4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				76059E732B8DE7C70089FE6F /* Preview Content */,
+				76059E712B8DE7C70089FE6F /* Assets.xcassets */,
 				7606D2652B921743009AF1C3 /* LaunchScreen.storyboard */,
 				766AFE692B8E180F00CFEEA4 /* feedData.json */,
 				766AFE6D2B8E1FBB00CFEEA4 /* postData.json */,
@@ -186,6 +192,7 @@
 				766AFE672B8E120700CFEEA4 /* FeedsModel.swift */,
 				766AFE8C2B9093F800CFEEA4 /* Models.swift */,
 				766AFEA92B91EC5900CFEEA4 /* Models+CoreData.swift */,
+				7606D26B2B9253FA009AF1C3 /* MockedData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -242,6 +249,7 @@
 				766AFE592B8DF98C00CFEEA4 /* FeedItem.swift */,
 				766AFE942B90BF0500CFEEA4 /* ActivityIndicatorView.swift */,
 				7606D2692B921EAE009AF1C3 /* ErrorView.swift */,
+				7606D2712B936B26009AF1C3 /* CircleImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -260,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				766AFE5F2B8E08F400CFEEA4 /* FeedList.swift */,
+				7606D26D2B92F9BB009AF1C3 /* FeedDetails.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -361,12 +370,14 @@
 				766AFE5A2B8DF98C00CFEEA4 /* FeedItem.swift in Sources */,
 				766AFEA62B91E53E00CFEEA4 /* RootViewAppearance.swift in Sources */,
 				766AFE752B8F821C00CFEEA4 /* SceneDelegate.swift in Sources */,
+				7606D2722B936B26009AF1C3 /* CircleImage.swift in Sources */,
 				766AFEAA2B91EC5900CFEEA4 /* Models+CoreData.swift in Sources */,
 				766AFE7C2B8F913C00CFEEA4 /* Store.swift in Sources */,
 				76059E702B8DE7C50089FE6F /* ContentView.swift in Sources */,
 				766AFE9A2B90D33B00CFEEA4 /* CoreDataHelpers.swift in Sources */,
 				766AFE812B8FADC900CFEEA4 /* LazyList.swift in Sources */,
 				7606D26A2B921EAE009AF1C3 /* ErrorView.swift in Sources */,
+				7606D26E2B92F9BB009AF1C3 /* FeedDetails.swift in Sources */,
 				766AFE772B8F82E400CFEEA4 /* SystemEventsHandler.swift in Sources */,
 				766AFE9D2B90F03200CFEEA4 /* FeedsWebRepository.swift in Sources */,
 				766AFEA82B91E62600CFEEA4 /* FeedsDBRepository.swift in Sources */,
@@ -374,6 +385,7 @@
 				766AFE932B90AB3B00CFEEA4 /* Loadable.swift in Sources */,
 				766AFE7F2B8FA8F000CFEEA4 /* CoreDataStack.swift in Sources */,
 				766AFEA12B91085600CFEEA4 /* InteractorsContainer.swift in Sources */,
+				7606D26C2B9253FA009AF1C3 /* MockedData.swift in Sources */,
 				766AFE582B8DF1C300CFEEA4 /* FeedView.swift in Sources */,
 				766AFE602B8E08F400CFEEA4 /* FeedList.swift in Sources */,
 				766AFE902B90A8F700CFEEA4 /* AppState.swift in Sources */,
@@ -516,7 +528,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"VideoVerve/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"VideoVerve/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = VideoVerve/Resources/Info.plist;
@@ -545,7 +557,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"VideoVerve/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"VideoVerve/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = VideoVerve/Resources/Info.plist;

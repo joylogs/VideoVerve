@@ -9,8 +9,7 @@ import CoreData
 import Foundation
 
 extension FeedMO: ManagedEntity {}
-//extension FeedDetailsManagedObject: ManagedEntity {}
-
+extension FeedDetailsMO: ManagedEntity {}
 
 extension Feed {
     
@@ -40,7 +39,25 @@ extension Feed {
         
         return feed
     }
+}
+
+extension Feed.Details {
     
-    
-    
+    init?(managedObject: FeedDetailsMO) {
+        guard let profileUrl = managedObject.profileUrl
+            else { return nil }
+        
+        self.init(profileUrl: profileUrl)
+    }
+}
+
+extension Feed.Details {
+    @discardableResult
+    func store(in context: NSManagedObjectContext,
+               feed: FeedMO) -> FeedDetailsMO? {
+        guard let details = FeedDetailsMO.insertNew(in: context)
+            else { return nil }
+//       Store any further Info needed
+        return details
+    }
 }

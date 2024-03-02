@@ -17,7 +17,6 @@ struct Feed: Codable, Equatable {
     var username: String
     var likes: Int
     
-    
     init(postId: Code, videoUrl: String, thumbnail_url: String, username: String, likes: Int) {
         self.postId = postId
         self.videoUrl = videoUrl
@@ -34,14 +33,12 @@ struct Feed: Codable, Equatable {
         self.username = try container.decode(String.self, forKey: .username)
         self.likes = try container.decode(Int.self, forKey: .likes)
     }
-    
 }
 
-struct FeedData2: Decodable {
-    var status: String
-    var data: [Feed]
-}
-
+//struct FeedData2: Decodable {
+//    var status: String
+//    var data: [Feed]
+//}
 
 extension Feed: Identifiable {
     var id: String { postId }
@@ -49,6 +46,15 @@ extension Feed: Identifiable {
 
 extension Feed {
     struct Details: Codable, Equatable {
+        var profileUrl: String
         
+        init(profileUrl: String) {
+            self.profileUrl = profileUrl
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container: KeyedDecodingContainer<Feed.Details.CodingKeys> = try decoder.container(keyedBy: Feed.Details.CodingKeys.self)
+            self.profileUrl = try container.decode(String.self, forKey: Feed.Details.CodingKeys.profileUrl)
+        }
     }
 }

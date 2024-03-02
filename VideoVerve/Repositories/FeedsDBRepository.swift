@@ -12,9 +12,8 @@ protocol FeedsDBRepository {
     func hasLoadedFeeds() -> AnyPublisher<Bool, Error>
     
     func store(feeds: [Feed]) -> AnyPublisher<Void, Error>
-//    func store(feedDetails: Feed.Details, for feed: Feed) -> AnyPublisher<Feed.Details?, Error>
-//    func feedDetails(feed: Feed) -> AnyPublisher<Feed.Details?, Error>
-    
+    func store(feedDetails: Feed.Details, for feed: Feed) -> AnyPublisher<Feed.Details?, Error>
+    func feedDetails(feed: Feed) -> AnyPublisher<Feed.Details?, Error>    
     func feeds(search: String) -> AnyPublisher<LazyList<Feed>, Error>
 }
 
@@ -49,28 +48,27 @@ struct VideoFeedsDBRepository: FeedsDBRepository {
             .eraseToAnyPublisher()
     }
 
-//    func store(feedDetails: Feed.Details, for feed: Feed) -> AnyPublisher<Feed.Details?, Error> {
-//        return persistentStore
-//            .update { context in
-//                let parentRequest = CountryMO.countries(alpha3codes: [country.alpha3Code])
-//                guard let parent = try context.fetch(parentRequest).first
-//                    else { return nil }
-//                let neighbors = CountryMO.countries(alpha3codes: countryDetails.borders)
-//                let borders = try context.fetch(neighbors)
-//                let details = countryDetails.store(in: context, country: parent, borders: borders)
-//                return details.flatMap { Country.Details(managedObject: $0) }
-//            }
-//    }
-
-//    func feedDetails(feed: Feed) -> AnyPublisher<Feed.Details?, Error> {
-//        let fetchRequest = CountryDetailsMO.details(country: country)
-//        return persistentStore
-//            .fetch(fetchRequest) {
-//                Country.Details(managedObject: $0)
-//            }
-//            .map { $0.first }
-//            .eraseToAnyPublisher()
-//    }
+    func store(feedDetails: Feed.Details, for feed: Feed) -> AnyPublisher<Feed.Details?, Error> {
+        return persistentStore
+            .update { context in
+                let parentRequest = FeedMO.feeds(postId: [feed.postId])
+                guard let parent = try context.fetch(parentRequest).first else {return nil}
+//                let userFeeds = FeedMO.feeds(postId: [])
+//                let borders = try context.fetch(userFeeds)
+                let details = feedDetails.store(in: context, feed: parent)
+                return details.flatMap { Feed.Details(managedObject: $0) }
+            }
+    }
+    
+    func feedDetails(feed: Feed) -> AnyPublisher<Feed.Details?, Error> {
+        let fetchRequest = FeedDetailsMO.details(feed: feed)
+        return persistentStore
+            .fetch(fetchRequest) {
+                Feed.Details(managedObject: $0)
+            }
+            .map { $0.first }
+            .eraseToAnyPublisher()
+    }
 }
 
 // MARK: - Fetch Requests
@@ -100,12 +98,20 @@ extension FeedMO {
         return request
     }
     
-    static func countries(alpha3codes: [String]) -> NSFetchRequest<FeedMO> {
+    static func feeds(postId: [String]) -> NSFetchRequest<FeedMO> {
         let request = newFetchRequest()
-        request.predicate = NSPredicate(format: "alpha3code in %@", alpha3codes)
-        request.fetchLimit = alpha3codes.count
+        request.predicate = NSPredicate(format: "postId in %@", postId)
+        request.fetchLimit = postId.count
         return request
     }
 }
 
 
+extension FeedDetailsMO {
+    static func details(feed: Feed) -> NSFetchRequest<FeedDetailsMO> {
+        let request = newFetchRequest()
+        request.predicate = NSPredicate(format: "feed.username == %@", feed.username)
+        request.fetchLimit = 1
+        return request
+    }
+}

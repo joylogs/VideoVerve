@@ -24,6 +24,7 @@ extension AppState {
 extension AppState {
     struct ViewRouting: Equatable {
         var feedsList = FeedList.Routing()
+        var feedDetails = FeedDetails.Routing()
     }
 }
 

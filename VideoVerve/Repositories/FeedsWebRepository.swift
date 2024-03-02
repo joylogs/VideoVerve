@@ -33,8 +33,13 @@ struct VideoFeedsWebRepository: FeedsWebRepository {
         let request: AnyPublisher<[Feed.Details], Error> = call(endpoint: API.feedDetails(feed))
         return request
             .tryMap { array -> Feed.Details in
+                
                 guard let details = array.first
-                    else { throw APIError.unexpectedResponse }
+                    else {
+                    print("here is the error")
+                    throw APIError.unexpectedResponse
+                }
+                
                 return details
             }
             .eraseToAnyPublisher()
@@ -53,9 +58,9 @@ extension VideoFeedsWebRepository.API: APICall {
         switch self {
         case .allFeeds:
 //            return "/65e068cedc74654018ab8616"
-            return "//d83770329296476a73e0"
+            return "/d83770329296476a73e0"
         case let .feedDetails(feed):
-            return "/65e1d4621f5677401f36a148"
+            return "/63940b729e608643fa2c"
         }
     }
     var method: String {
