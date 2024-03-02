@@ -16,6 +16,11 @@
 		7606D26C2B9253FA009AF1C3 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7606D26B2B9253FA009AF1C3 /* MockedData.swift */; };
 		7606D26E2B92F9BB009AF1C3 /* FeedDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7606D26D2B92F9BB009AF1C3 /* FeedDetails.swift */; };
 		7606D2722B936B26009AF1C3 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7606D2712B936B26009AF1C3 /* CircleImage.swift */; };
+		760DC68C2B93BF330085C4EA /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DC68B2B93BF330085C4EA /* ProfileSummary.swift */; };
+		760DC68E2B93CF0A0085C4EA /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DC68D2B93CF0A0085C4EA /* ProfileInteractor.swift */; };
+		760DC6902B93D0410085C4EA /* ProfileWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DC68F2B93D0410085C4EA /* ProfileWebRepository.swift */; };
+		760DC6922B93D29E0085C4EA /* ProfileDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DC6912B93D29E0085C4EA /* ProfileDBRepository.swift */; };
+		760DC6942B93DE190085C4EA /* ProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DC6932B93DE190085C4EA /* ProfileRow.swift */; };
 		766AFE582B8DF1C300CFEEA4 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE572B8DF1C300CFEEA4 /* FeedView.swift */; };
 		766AFE5A2B8DF98C00CFEEA4 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AFE592B8DF98C00CFEEA4 /* FeedItem.swift */; };
 		766AFE5D2B8E039900CFEEA4 /* SampleVideo_1280x720_1mb.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 766AFE5C2B8E039900CFEEA4 /* SampleVideo_1280x720_1mb.mp4 */; };
@@ -63,6 +68,11 @@
 		7606D26B2B9253FA009AF1C3 /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 		7606D26D2B92F9BB009AF1C3 /* FeedDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetails.swift; sourceTree = "<group>"; };
 		7606D2712B936B26009AF1C3 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		760DC68B2B93BF330085C4EA /* ProfileSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
+		760DC68D2B93CF0A0085C4EA /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		760DC68F2B93D0410085C4EA /* ProfileWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWebRepository.swift; sourceTree = "<group>"; };
+		760DC6912B93D29E0085C4EA /* ProfileDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDBRepository.swift; sourceTree = "<group>"; };
+		760DC6932B93DE190085C4EA /* ProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRow.swift; sourceTree = "<group>"; };
 		766AFE572B8DF1C300CFEEA4 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		766AFE592B8DF98C00CFEEA4 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		766AFE5C2B8E039900CFEEA4 /* SampleVideo_1280x720_1mb.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SampleVideo_1280x720_1mb.mp4; sourceTree = "<group>"; };
@@ -247,6 +257,7 @@
 				766AFE942B90BF0500CFEEA4 /* ActivityIndicatorView.swift */,
 				7606D2692B921EAE009AF1C3 /* ErrorView.swift */,
 				7606D2712B936B26009AF1C3 /* CircleImage.swift */,
+				760DC6932B93DE190085C4EA /* ProfileRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -266,6 +277,7 @@
 			children = (
 				766AFE5F2B8E08F400CFEEA4 /* FeedList.swift */,
 				7606D26D2B92F9BB009AF1C3 /* FeedDetails.swift */,
+				760DC68B2B93BF330085C4EA /* ProfileSummary.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -275,6 +287,8 @@
 			children = (
 				766AFE9C2B90F03200CFEEA4 /* FeedsWebRepository.swift */,
 				766AFEA72B91E62600CFEEA4 /* FeedsDBRepository.swift */,
+				760DC68F2B93D0410085C4EA /* ProfileWebRepository.swift */,
+				760DC6912B93D29E0085C4EA /* ProfileDBRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -283,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				766AFEA32B91CFB000CFEEA4 /* FeedsInteractor.swift */,
+				760DC68D2B93CF0A0085C4EA /* ProfileInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -364,6 +379,8 @@
 			files = (
 				766AFE732B8F812A00CFEEA4 /* AppDelegate.swift in Sources */,
 				766AFE872B8FB14D00CFEEA4 /* APICall.swift in Sources */,
+				760DC68C2B93BF330085C4EA /* ProfileSummary.swift in Sources */,
+				760DC6922B93D29E0085C4EA /* ProfileDBRepository.swift in Sources */,
 				766AFE5A2B8DF98C00CFEEA4 /* FeedItem.swift in Sources */,
 				766AFEA62B91E53E00CFEEA4 /* RootViewAppearance.swift in Sources */,
 				766AFE752B8F821C00CFEEA4 /* SceneDelegate.swift in Sources */,
@@ -372,6 +389,7 @@
 				766AFE7C2B8F913C00CFEEA4 /* Store.swift in Sources */,
 				76059E702B8DE7C50089FE6F /* ContentView.swift in Sources */,
 				766AFE9A2B90D33B00CFEEA4 /* CoreDataHelpers.swift in Sources */,
+				760DC68E2B93CF0A0085C4EA /* ProfileInteractor.swift in Sources */,
 				766AFE812B8FADC900CFEEA4 /* LazyList.swift in Sources */,
 				7606D26A2B921EAE009AF1C3 /* ErrorView.swift in Sources */,
 				7606D26E2B92F9BB009AF1C3 /* FeedDetails.swift in Sources */,
@@ -379,9 +397,11 @@
 				766AFE9D2B90F03200CFEEA4 /* FeedsWebRepository.swift in Sources */,
 				766AFEA82B91E62600CFEEA4 /* FeedsDBRepository.swift in Sources */,
 				76A44CC52B91F0C500D6EE28 /* NetworkingHelpers.swift in Sources */,
+				760DC6942B93DE190085C4EA /* ProfileRow.swift in Sources */,
 				766AFE932B90AB3B00CFEEA4 /* Loadable.swift in Sources */,
 				766AFE7F2B8FA8F000CFEEA4 /* CoreDataStack.swift in Sources */,
 				766AFEA12B91085600CFEEA4 /* InteractorsContainer.swift in Sources */,
+				760DC6902B93D0410085C4EA /* ProfileWebRepository.swift in Sources */,
 				7606D26C2B9253FA009AF1C3 /* MockedData.swift in Sources */,
 				766AFE582B8DF1C300CFEEA4 /* FeedView.swift in Sources */,
 				766AFE602B8E08F400CFEEA4 /* FeedList.swift in Sources */,

@@ -47,13 +47,17 @@ extension AppEnvironment {
         let feedsWebRepository = VideoFeedsWebRepository(
             session: session,
             baseURL: "https://api.npoint.io")
-        return .init(feedsRepository: feedsWebRepository)
+        let profileWebRepository = UserProfileWebRepository(
+            session: session,
+            baseURL: "https://api.npoint.io")
+        return .init(feedsRepository: feedsWebRepository, profileRepository: profileWebRepository)
     }
     
     private static func configuredDBRepositories(appState: Store<AppState>) -> DIContainer.DBRepositories {
         let persistentStore = CoreDataStack(version: CoreDataStack.Version.actual)
         let feedsDBRepository = VideoFeedsDBRepository(persistentStore: persistentStore)
-        return .init(feedsRepository: feedsDBRepository)
+        let profileDBRepository = UserProfileDBRepository(persistentStore: persistentStore)
+        return .init(feedsRepository: feedsDBRepository, profileRepository: profileDBRepository)
         
     }
     
@@ -64,7 +68,10 @@ extension AppEnvironment {
         let feedsInteractor = VideoFeedsInteractor(webRepository: webRepositories.feedsRepository,
                                                    dbRepository: dbRepositories.feedsRepository,
                                                    appState: appState)
-        return .init(feedsInteractor: feedsInteractor)
+        let profileInteractor = UserProfileInteractor(webRepository: webRepositories.profileRepository,
+                                                   dbRepository: dbRepositories.profileRepository,
+                                                   appState: appState)
+        return .init(feedsInteractor: feedsInteractor, profileInteractor: profileInteractor)
     }
 }
 
@@ -72,9 +79,11 @@ extension AppEnvironment {
 extension DIContainer {
     struct WebRepositories {
         let feedsRepository: FeedsWebRepository
+        let profileRepository: ProfileWebRepository
     }
     
     struct DBRepositories {
         let feedsRepository: FeedsDBRepository
+        let profileRepository: ProfileDBRepository
     }
 }

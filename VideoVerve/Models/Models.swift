@@ -42,14 +42,47 @@ extension Feed: Identifiable {
 extension Feed {
     struct Details: Codable, Equatable {
         var profileUrl: String
+        var feedDescription: String
         
-        init(profileUrl: String) {
+        init(profileUrl: String, feedDescription: String) {
             self.profileUrl = profileUrl
+            self.feedDescription = feedDescription
         }
         
         init(from decoder: Decoder) throws {
             let container: KeyedDecodingContainer<Feed.Details.CodingKeys> = try decoder.container(keyedBy: Feed.Details.CodingKeys.self)
             self.profileUrl = try container.decode(String.self, forKey: Feed.Details.CodingKeys.profileUrl)
+            self.feedDescription = try container.decode(String.self, forKey: Feed.Details.CodingKeys.feedDescription)
         }
     }
+}
+
+
+struct Profile: Codable, Equatable {
+    
+    typealias Code = String
+    
+    var postId: Code
+    var videoUrl: String
+    var thumbnail_url: String
+    var likes: Int
+    
+    init(postId: Code, videoUrl: String, thumbnail_url: String, likes: Int) {
+        self.postId = postId
+        self.videoUrl = videoUrl
+        self.thumbnail_url = thumbnail_url
+        self.likes = likes
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.postId = try container.decode(Feed.Code.self, forKey: .postId)
+        self.videoUrl = try container.decode(String.self, forKey: .videoUrl)
+        self.thumbnail_url = try container.decode(String.self, forKey: .thumbnail_url)
+        self.likes = try container.decode(Int.self, forKey: .likes)
+    }
+}
+
+extension Profile: Identifiable {
+    var id: String { postId }
 }

@@ -14,3 +14,11 @@ extension Feed {
         Feed(postId: "post_id_3", videoUrl: "thisisastring", thumbnail_url: "thisisastring", username: "user345", likes: 20)
     ]
 }
+
+extension Profile {
+    static let mockedData: [Profile] = [
+        Profile(postId: "post_id_1", videoUrl: "thisisastring", thumbnail_url: "thisisastring", likes: 12),
+        Profile(postId: "post_id_2", videoUrl: "thisisastring", thumbnail_url: "thisisastring", likes: 15),
+        Profile(postId: "post_id_3", videoUrl: "thisisastring", thumbnail_url: "thisisastring", likes: 20)
+    ]
+}

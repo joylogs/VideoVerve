@@ -9,7 +9,14 @@
         <relationship name="feedDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FeedDetails" inverseName="feed" inverseEntity="FeedDetails"/>
     </entity>
     <entity name="FeedDetails" representedClassName="FeedDetailsMO" syncable="YES" codeGenerationType="class">
+        <attribute name="feedDescription" optional="YES" attributeType="String"/>
         <attribute name="profileUrl" optional="YES" attributeType="String"/>
         <relationship name="feed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Feed" inverseName="feedDetails" inverseEntity="Feed"/>
+    </entity>
+    <entity name="Profile" representedClassName="ProfileMO" syncable="YES" codeGenerationType="class">
+        <attribute name="likes" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="postId" optional="YES" attributeType="String"/>
+        <attribute name="thumbnail_url" optional="YES" attributeType="String"/>
+        <attribute name="videoUrl" optional="YES" attributeType="String"/>
     </entity>
 </model>

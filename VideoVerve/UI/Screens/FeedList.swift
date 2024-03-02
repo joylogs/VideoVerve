@@ -16,6 +16,7 @@ struct FeedList: View {
         $routingState.dispatched(to: injected.appState, \.routing.feedsList)
     }
     @Environment(\.injected) private var injected: DIContainer
+    @State private var showingProfile: Bool = false
     
     init(feeds: Loadable<LazyList<Feed>> = .notRequested) {
         self._feeds = .init(initialValue: feeds)
@@ -74,9 +75,18 @@ extension FeedList {
                     tag: feed.postId,
                     selection: self.routingBinding.feedDetails) {
                         FeedItem(feed: feed)
-                            
                     }
                     .listRowSeparator(.hidden)
+            }
+            .toolbar {
+                Button {
+                    showingProfile.toggle()
+                } label: {
+                    Label("User Profile", systemImage: "person.crop.circle")
+                }
+            }
+            .sheet(isPresented: $showingProfile) {
+                ProfileSummary()
             }
             .refreshable {
                 DispatchQueue.main.async {

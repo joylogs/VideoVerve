@@ -106,7 +106,7 @@ private extension FeedDetails {
                 
                 Text("About \(feed.postId)")
                     .font(.title2)
-                Text("description")
+                Text(feedDetails.feedDescription)
             }
             .padding()
         }

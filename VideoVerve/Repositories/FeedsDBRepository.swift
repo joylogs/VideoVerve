@@ -87,11 +87,6 @@ extension FeedMO {
         if search.count == 0 {
             request.predicate = NSPredicate(value: true)
         } else {
-//            let localeId = locale.shortIdentifier
-//            let nameMatch = NSPredicate(format: "name CONTAINS[cd] %@", search)
-//            let localizedMatch = NSPredicate(format:
-//            "(SUBQUERY(nameTranslations,$t,$t.locale == %@ AND $t.name CONTAINS[cd] %@).@count > 0)", localeId, search)
-//            request.predicate = NSCompoundPredicate(type: .or, subpredicates: [nameMatch, localizedMatch])
         }
         request.sortDescriptors = [NSSortDescriptor(key: "username", ascending: true)]
         request.fetchBatchSize = 10
