@@ -57,32 +57,46 @@ extension Feed {
     }
 }
 
+struct ProfileResponse: Codable, Equatable {
+    var status: String
+    var data: ProfileData
+}
 
-struct Profile: Codable, Equatable {
-    
-    typealias Code = String
-    
-    var postId: Code
-    var videoUrl: String
-    var thumbnail_url: String
-    var likes: Int
-    
-    init(postId: Code, videoUrl: String, thumbnail_url: String, likes: Int) {
-        self.postId = postId
-        self.videoUrl = videoUrl
-        self.thumbnail_url = thumbnail_url
-        self.likes = likes
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.postId = try container.decode(Feed.Code.self, forKey: .postId)
-        self.videoUrl = try container.decode(String.self, forKey: .videoUrl)
-        self.thumbnail_url = try container.decode(String.self, forKey: .thumbnail_url)
-        self.likes = try container.decode(Int.self, forKey: .likes)
+extension ProfileResponse {
+    struct ProfileData: Codable, Equatable {
+        var username: String
+        var profilePictureUrl: String
+        var posts: [Profile]
     }
 }
 
-extension Profile: Identifiable {
+extension ProfileResponse {
+    struct Profile: Codable, Equatable {
+        
+        typealias Code = String
+        
+        var postId: Code
+        var videoUrl: String
+        var thumbnail_url: String
+        var likes: Int
+        
+        init(postId: Code, videoUrl: String, thumbnail_url: String, likes: Int) {
+            self.postId = postId
+            self.videoUrl = videoUrl
+            self.thumbnail_url = thumbnail_url
+            self.likes = likes
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.postId = try container.decode(Feed.Code.self, forKey: .postId)
+            self.videoUrl = try container.decode(String.self, forKey: .videoUrl)
+            self.thumbnail_url = try container.decode(String.self, forKey: .thumbnail_url)
+            self.likes = try container.decode(Int.self, forKey: .likes)
+        }
+    }
+}
+
+extension ProfileResponse.Profile: Identifiable {
     var id: String { postId }
 }

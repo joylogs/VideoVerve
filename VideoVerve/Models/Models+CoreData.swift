@@ -42,7 +42,7 @@ extension Feed {
     }
 }
 
-extension Profile {
+extension ProfileResponse.Profile {
     
     init?(managedObject: ProfileMO) {
         guard

@@ -13,25 +13,33 @@ struct FeedItem: View {
     let feed: Feed
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                CircleImage(image: Image("turtlerock"))
-                .scaleEffect(1.0 / 3.0)
+            VStack(alignment: .leading) {
+                HStack {
+                    CircleImage(image: Image("turtlerock"))
+                    .scaleEffect(1.0 / 3.0)
 
-                Text("\(feed.username)")
-                    .font(.callout)
-                    .bold()
-                Spacer()
+                    Text("\(feed.username)")
+                        .font(.callout)
+                        .bold()
+                    Spacer()
+                    
+                    HStack {
+                        Text("\(feed.likes) Likes")
+                            .font(.caption)
+                    }
+                }
                 
                 HStack {
-                    Text("\(feed.likes) Likes")
-                        .font(.caption)
+                    Spacer()
+                    
+                    VideoPlayer(player: player(feed: feed))
+                        .frame(width: 320,
+                               height: 180, alignment: .top)
+                    
+                    Spacer()
                 }
-            }
-            VideoPlayer(player: player(feed: feed))
-                .frame(width: 320, height: 180, alignment: .top)
 
-            Divider()
+                Divider()
         }
     }
     

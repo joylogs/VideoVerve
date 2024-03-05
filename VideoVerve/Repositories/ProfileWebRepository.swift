@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 protocol ProfileWebRepository: WebRepository {
-    func loadFeeds() -> AnyPublisher<[Profile], Error>
+    func loadFeeds() -> AnyPublisher<ProfileResponse, Error>
 }
 
 struct UserProfileWebRepository: ProfileWebRepository {
@@ -23,8 +23,15 @@ struct UserProfileWebRepository: ProfileWebRepository {
         self.baseURL = baseURL
     }
     
-    func loadFeeds() -> AnyPublisher<[Profile], Error> {
-        return call(endpoint: API.profile)
+    func loadFeeds() -> AnyPublisher<ProfileResponse, Error> {
+        let value: AnyPublisher<ProfileResponse, Error> = call(endpoint: API.profile)
+        
+        let someVal = value.tryMap { profileResponse -> ProfileResponse in
+//            print(profileResponse)
+            return profileResponse
+        }.eraseToAnyPublisher()
+        
+        return someVal
     }
 }
 
@@ -38,7 +45,7 @@ extension UserProfileWebRepository.API: APICall {
     var path: String {
         switch self {
         case .profile:
-            return "/38786b062e095a6155fc"
+            return "/d3f326e5515c29896063"
         }
     }
     var method: String {

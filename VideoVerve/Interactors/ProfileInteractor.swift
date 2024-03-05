@@ -10,7 +10,7 @@ import Combine
 
 protocol ProfileInteractor {
     func refreshProfileFeedsList() -> AnyPublisher<Void, Error>
-    func load(feeds: LoadableSubject<LazyList<Profile>>)
+    func load(feeds: LoadableSubject<LazyList<ProfileResponse.Profile>>)
 //    func load(feedDetails: LoadableSubject<Feed.Details>, feed: Feed)
 }
 
@@ -20,9 +20,13 @@ struct UserProfileInteractor: ProfileInteractor {
     let dbRepository: ProfileDBRepository
     let appState: Store<AppState>
     
-    func load(feeds: LoadableSubject<LazyList<Profile>>) {
+    func load(feeds: LoadableSubject<LazyList<ProfileResponse.Profile>>) {
         let cancelBag = CancelBag()
         feeds.wrappedValue.setIsLoading(cancelBag: cancelBag)
+        
+        
+//        Just.withErrorType(Error.self).flatMap(<#T##transform: (()) -> Publisher##(()) -> Publisher#>)
+        
         
         Just<Void>.withErrorType(Error.self).flatMap { [dbRepository] _ -> AnyPublisher<Bool, Error> in
                 dbRepository.hasLoadedProfileFeeds()
@@ -40,14 +44,28 @@ struct UserProfileInteractor: ProfileInteractor {
     }
     
     func refreshProfileFeedsList() -> AnyPublisher<Void, Error> {
-        return webRepository
-            .loadFeeds()
-            .ensureTimeSpan(requestHoldBackTimeInterval)
-            .flatMap { [dbRepository] in
-                dbRepository.store(feeds: $0)
-            }
-            .eraseToAnyPublisher()
+//        return webRepository
+//            .loadFeeds()
+//            .ensureTimeSpan(requestHoldBackTimeInterval)
+//            .flatMap { [dbRepository] (xyz: [ProfileResponse]) in
+//                let abc: [ProfileResponse.Profile] = xyz[0].data.posts
+//                return dbRepository.store(feeds: abc)
+//            }
+//            .eraseToAnyPublisher()
+        
+        return webRepository.loadFeeds().ensureTimeSpan(requestHoldBackTimeInterval).flatMap { response in
+            let res = response.data.posts
+            return dbRepository.store(feeds: res)
+        }
+        .eraseToAnyPublisher()
     }
+    
+//    private func testFunc() -> AnyPublisher<Void, Error> {
+//        let value = webRepository.loadFeeds().ensureTimeSpan(0.5).flatMap { [ProfileResponse] in
+//            <#code#>
+//        }
+//        return value
+//    }
     
     private var requestHoldBackTimeInterval: TimeInterval {
         return 0.5
@@ -60,7 +78,7 @@ struct EmptyProfileInteractor: ProfileInteractor {
         return Just<Void>.withErrorType(Error.self)
     }
     
-    func load(feeds: LoadableSubject<LazyList<Profile>>) {
+    func load(feeds: LoadableSubject<LazyList<ProfileResponse.Profile>>) {
     }
 }
 

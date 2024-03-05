@@ -10,14 +10,14 @@ import Combine
 
 struct ProfileSummary: View {
     
-    @State private(set) var profileFeeds: Loadable<LazyList<Profile>>
+    @State private(set) var profileFeeds: Loadable<LazyList<ProfileResponse.Profile>>
     @State private var routingState: Routing = .init()
     private var routingBinding: Binding<Routing> {
         $routingState.dispatched(to: injected.appState, \.routing.profile)
     }
     @Environment(\.injected) private var injected: DIContainer
     
-    init(profileFeeds: Loadable<LazyList<Profile>> = .notRequested) {
+    init(profileFeeds: Loadable<LazyList<ProfileResponse.Profile>> = .notRequested) {
         self._profileFeeds = .init(initialValue: profileFeeds)
     }
     
@@ -64,7 +64,7 @@ private extension ProfileSummary {
 // MARK: - DISPLAYING CONTENT
 
 extension ProfileSummary {
-    func loadedView(_ profileFeeds: LazyList<Profile>, showLoading: Bool) -> some View {
+    func loadedView(_ profileFeeds: LazyList<ProfileResponse.Profile>, showLoading: Bool) -> some View {
         VStack {
             if showLoading {
                 ActivityIndicatorView().padding()
@@ -72,7 +72,7 @@ extension ProfileSummary {
             CircleImage(image: Image("turtlerock"))
                 .scaleEffect(1.0/1.5, anchor: .top)
             
-            Text("username")
+            Text("joy_logs")
                 .bold()
                 .font(.title3)
             Divider()
@@ -94,7 +94,7 @@ private extension ProfileSummary {
         Text("").onAppear(perform: reloadFeeds)
     }
     
-    func loadingView(_ previouslyLoaded: LazyList<Profile>?) -> some View {
+    func loadingView(_ previouslyLoaded: LazyList<ProfileResponse.Profile>?) -> some View {
         if let feeds = previouslyLoaded {
             return AnyView(loadedView(feeds, showLoading: true))
         } else {
@@ -114,13 +114,13 @@ private extension ProfileSummary {
 
 extension ProfileSummary {
     struct Routing: Equatable {
-        var profile: Profile.Code?
+        var profile: ProfileResponse.Profile.Code?
     }
 }
 
 struct ProfileSummary_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileSummary(profileFeeds: .loaded(Profile.mockedData.lazyList))
+        ProfileSummary(profileFeeds: .loaded(ProfileResponse.Profile.mockedData.lazyList))
     }
 }
 

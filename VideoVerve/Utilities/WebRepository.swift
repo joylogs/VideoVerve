@@ -42,16 +42,25 @@ extension Publisher where Output == URLSession.DataTaskPublisher.Output {
                 }
                 return $0.0
             }
-//            .extractUnderlyingError()
+            .extractUnderlyingError()
             .eraseToAnyPublisher()
     }
 }
 
 private extension Publisher where Output == URLSession.DataTaskPublisher.Output {
     func requestJSON<Value>(httpCodes: HTTPCodes) -> AnyPublisher<Value, Error> where Value: Decodable {
-        return requestData(httpCodes: httpCodes)
-            .decode(type: Value.self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
+        
+        let httpC = httpCodes
+        
+        let someVal = requestData(httpCodes: httpCodes).decode(type: Value.self, decoder: JSONDecoder()).receive(on: DispatchQueue.main).eraseToAnyPublisher()
+        
+        
+        
+        return someVal
+        
+//        return requestData(httpCodes: httpCodes)
+//            .decode(type: Value.self, decoder: JSONDecoder())
+//            .receive(on: DispatchQueue.main)
+//            .eraseToAnyPublisher()
     }
 }
