@@ -53,8 +53,7 @@ struct VideoFeedsDBRepository: FeedsDBRepository {
             .update { context in
                 let parentRequest = FeedMO.feeds(postId: [feed.postId])
                 guard let parent = try context.fetch(parentRequest).first else {return nil}
-//                let userFeeds = FeedMO.feeds(postId: [])
-//                let borders = try context.fetch(userFeeds)
+
                 let details = feedDetails.store(in: context, feed: parent)
                 return details.flatMap { Feed.Details(managedObject: $0) }
             }

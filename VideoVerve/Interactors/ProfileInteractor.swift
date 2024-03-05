@@ -11,7 +11,6 @@ import Combine
 protocol ProfileInteractor {
     func refreshProfileFeedsList() -> AnyPublisher<Void, Error>
     func load(feeds: LoadableSubject<LazyList<Profile>>)
-//    func load(feedDetails: LoadableSubject<Feed.Details>, feed: Feed)
 }
 
 struct UserProfileInteractor: ProfileInteractor {

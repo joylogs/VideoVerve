@@ -25,7 +25,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         self.systemEventsHandler = environment.systemEventsHandler
         if !connectionOptions.urlContexts.isEmpty {
-//            systemEventsHandler?.sceneOpenURLContexts(connectionOptions.urlContexts)
         }
     }
     
