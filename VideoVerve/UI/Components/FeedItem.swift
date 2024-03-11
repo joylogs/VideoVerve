@@ -28,6 +28,7 @@ struct FeedItem: View {
             }
             
             CustomVideoPlayer(feed: feed)
+                .frame(width: 320, height: 180, alignment: .center)
             
             Divider()
         }

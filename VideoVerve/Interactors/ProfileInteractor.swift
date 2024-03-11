@@ -24,10 +24,6 @@ struct UserProfileInteractor: ProfileInteractor {
         let cancelBag = CancelBag()
         feeds.wrappedValue.setIsLoading(cancelBag: cancelBag)
         
-        
-//        Just.withErrorType(Error.self).flatMap(<#T##transform: (()) -> Publisher##(()) -> Publisher#>)
-        
-        
         Just<Void>.withErrorType(Error.self).flatMap { [dbRepository] _ -> AnyPublisher<Bool, Error> in
                 dbRepository.hasLoadedProfileFeeds()
             }.flatMap { hasLoaded -> AnyPublisher<Void, Error> in

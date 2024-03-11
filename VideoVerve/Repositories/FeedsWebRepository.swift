@@ -45,9 +45,9 @@ struct VideoFeedsWebRepository: FeedsWebRepository {
 //        .eraseToAnyPublisher()
         
         return request
-            .tryMap { array -> Feed.Details in
+            .tryMap { array123 -> Feed.Details in
 
-                guard let details = array.first
+                guard let details = array123.first
                     else {
                     print("here is the error")
                     throw APIError.unexpectedResponse
