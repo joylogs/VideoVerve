@@ -11,12 +11,7 @@ import AVKit
 
 struct FeedItem: View {
     let feed: Feed
-    
-    //    @State private var feed: Loadable<Feed>
-    
-    //    init(feed: Feed) {
-    //        self.feed = feed
-    //    }
+    @State private var showOverlay = true
     
     var body: some View {
         
@@ -36,10 +31,18 @@ struct FeedItem: View {
             VideoPlayer(player: player(feed: feed))
                 .frame(width: 320, height: 180, alignment: .top)
                 .overlay {
-                    Image("turtlerock")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .ignoresSafeArea()
+                    if showOverlay {
+                        Image("turtlerock")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .ignoresSafeArea()
+                    }
+                    else {
+                        
+                    }
+                }
+                .onTapGesture {
+                    showOverlay.toggle()
                 }
             
             Divider()
@@ -48,13 +51,13 @@ struct FeedItem: View {
     
     func generateThumbImage(url: URL) -> UIImage {
         
-        var asset: AVAsset = AVAsset(url: url)
-        var assetImgGenerate: AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
+        let asset: AVAsset = AVAsset(url: url)
+        let assetImgGenerate: AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
         
         assetImgGenerate.appliesPreferredTrackTransform = true
         
-        var time: CMTime = CMTimeMake(value: 1, timescale: 30)
-        var image: CGImage
+        let time: CMTime = CMTimeMake(value: 1, timescale: 30)
+        let image: CGImage
         do {
             image = try assetImgGenerate.copyCGImage(at: time, actualTime: nil)
         } catch {
@@ -62,7 +65,7 @@ struct FeedItem: View {
             print(error.localizedDescription)
         }
         
-        var frameImage: UIImage = UIImage(cgImage: image)
+        let frameImage: UIImage = UIImage(cgImage: image)
         
         return frameImage
     }
