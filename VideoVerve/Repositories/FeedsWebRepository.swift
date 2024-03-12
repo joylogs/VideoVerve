@@ -31,15 +31,28 @@ struct VideoFeedsWebRepository: FeedsWebRepository {
     
     func loadFeedDetails(feed: Feed) -> AnyPublisher<Feed.Details, Error> {
         let request: AnyPublisher<[Feed.Details], Error> = call(endpoint: API.feedDetails(feed))
+        
+//        return request.tryMap { xyz -> [Feed.Details] in
+//
+//            guard xyz.count > 1
+//                    else {
+//                        print("here is the error")
+//                        throw APIError.unexpectedResponse
+//                    }
+//            return xyz
+//
+//        }
+//        .eraseToAnyPublisher()
+        
         return request
-            .tryMap { array -> Feed.Details in
-                
-                guard let details = array.first
+            .tryMap { array123 -> Feed.Details in
+
+                guard let details = array123.first
                     else {
                     print("here is the error")
                     throw APIError.unexpectedResponse
                 }
-                
+
                 return details
             }
             .eraseToAnyPublisher()

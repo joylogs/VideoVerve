@@ -15,10 +15,10 @@ extension Feed {
     ]
 }
 
-extension Profile {
-    static let mockedData: [Profile] = [
-        Profile(postId: "post_id_1", videoUrl: "thisisastring", thumbnail_url: "thisisastring", likes: 12),
-        Profile(postId: "post_id_2", videoUrl: "thisisastring", thumbnail_url: "thisisastring", likes: 15),
-        Profile(postId: "post_id_3", videoUrl: "thisisastring", thumbnail_url: "thisisastring", likes: 20)
+extension ProfileResponse.Profile {
+    static let mockedData: [ProfileResponse.Profile] = [
+        ProfileResponse.Profile(postId: "post_id_1", videoUrl: "thisisastring", thumbnail_url: "thisisastring", likes: 12),
+        ProfileResponse.Profile(postId: "post_id_2", videoUrl: "thisisastring", thumbnail_url: "thisisastring", likes: 15),
+        ProfileResponse.Profile(postId: "post_id_3", videoUrl: "thisisastring", thumbnail_url: "thisisastring", likes: 20)
     ]
 }

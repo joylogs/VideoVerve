@@ -10,7 +10,7 @@ import AVKit
 
 struct ProfileRow: View {
     
-    let profile: Profile
+    let profile: ProfileResponse.Profile
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -32,7 +32,7 @@ struct ProfileRow: View {
         }
     }
     
-    func player(profile: Profile) -> AVPlayer {
+    func player(profile: ProfileResponse.Profile) -> AVPlayer {
         //Ignoring the feed Url for now
         let p = AVPlayer(url: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4")!)
         return p
@@ -41,6 +41,6 @@ struct ProfileRow: View {
 
 struct ProfileRow_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileRow(profile: Profile.mockedData[0])
+        ProfileRow(profile: ProfileResponse.Profile.mockedData[0])
     }
 }

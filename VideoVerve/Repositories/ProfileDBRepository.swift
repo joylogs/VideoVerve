@@ -11,8 +11,8 @@ import CoreData
 protocol ProfileDBRepository {
     func hasLoadedProfileFeeds() -> AnyPublisher<Bool, Error>
     
-    func store(feeds: [Profile]) -> AnyPublisher<Void, Error>
-    func feeds(search: String) -> AnyPublisher<LazyList<Profile>, Error>
+    func store(feeds: [ProfileResponse.Profile]) -> AnyPublisher<Void, Error>
+    func feeds(search: String) -> AnyPublisher<LazyList<ProfileResponse.Profile>, Error>
 }
 
 struct UserProfileDBRepository: ProfileDBRepository {
@@ -27,7 +27,7 @@ struct UserProfileDBRepository: ProfileDBRepository {
             .eraseToAnyPublisher()
     }
 
-    func store(feeds: [Profile]) -> AnyPublisher<Void, Error> {
+    func store(feeds: [ProfileResponse.Profile]) -> AnyPublisher<Void, Error> {
         return persistentStore
             .update { context in
                 feeds.forEach {
@@ -36,11 +36,11 @@ struct UserProfileDBRepository: ProfileDBRepository {
             }
     }
     
-    func feeds(search: String) -> AnyPublisher<LazyList<Profile>, Error> {
+    func feeds(search: String) -> AnyPublisher<LazyList<ProfileResponse.Profile>, Error> {
         let fetchRequest = ProfileMO.feeds(search: search, locale: Locale(identifier: "en"))
         return persistentStore
             .fetch(fetchRequest) {
-                Profile(managedObject: $0)
+                ProfileResponse.Profile(managedObject: $0)
             }
             .eraseToAnyPublisher()
     }
