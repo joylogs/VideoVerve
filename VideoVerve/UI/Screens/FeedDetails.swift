@@ -81,7 +81,7 @@ private extension FeedDetails {
 
 private extension FeedDetails {
     func loadedView(_ feedDetails: Feed.Details) -> some View {
-        //TO DO: Check if the below can be incorporated
+        //TO DO: We can split this into a separate view
         ScrollView {
             
             VStack(alignment: .leading) {
