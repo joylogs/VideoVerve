@@ -7,10 +7,17 @@
 
 import SwiftUI
 import Combine
-import AVKit
 
 struct FeedItem: View {
+    
     let feed: Feed
+    
+    @Environment(\.injected) private var injected: DIContainer
+    
+    private var routingState: Routing = .init()
+    private var routingBinding: Binding<Routing> {
+        routingState.dispatched(to: injected.appState, \.routing.feedItem)
+    }
     
     var body: some View {
         
@@ -32,6 +39,12 @@ struct FeedItem: View {
             
             Divider()
         }
+    }
+}
+
+extension FeedItem {
+    struct Routing: Equatable {
+        
     }
 }
 

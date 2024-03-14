@@ -26,6 +26,7 @@ extension AppState {
         var feedsList = FeedList.Routing()
         var feedDetails = FeedDetails.Routing()
         var profile = ProfileSummary.Routing()
+        var feedItem = FeedItem.Routing()
     }
 }
 
