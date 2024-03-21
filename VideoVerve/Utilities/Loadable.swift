@@ -98,16 +98,16 @@ extension Loadable where T: SomeOptional {
     }
 }
 
-extension Loadable: Equatable where T: Equatable {
-    static func == (lhs: Loadable<T>, rhs: Loadable<T>) -> Bool {
-        switch (lhs, rhs) {
-        case (.notRequested, .notRequested): return true
-        case let (.isLoading(lhsV, lhsC), .isLoading(rhsV, rhsC)):
-            return lhsV == rhsV && lhsC.isEqual(to: rhsC)
-        case let (.loaded(lhsV), .loaded(rhsV)): return lhsV == rhsV
-        case let (.failed(lhsE), .failed(rhsE)):
-            return lhsE.localizedDescription == rhsE.localizedDescription
-        default: return false
-        }
-    }
-}
+//extension Loadable: Equatable where T: Equatable {
+//    static func == (lhs: Loadable<T>, rhs: Loadable<T>) -> Bool {
+//        switch (lhs, rhs) {
+//        case (.notRequested, .notRequested): return true
+//        case let (.isLoading(lhsV, lhsC), .isLoading(rhsV, rhsC)):
+//            return lhsV == rhsV && lhsC.isEqual(to: rhsC)
+//        case let (.loaded(lhsV), .loaded(rhsV)): return lhsV == rhsV
+//        case let (.failed(lhsE), .failed(rhsE)):
+//            return lhsE.localizedDescription == rhsE.localizedDescription
+//        default: return false
+//        }
+//    }
+//}

@@ -23,13 +23,11 @@ struct FeedList: View {
     }
     
     var body: some View {
-//        GeometryReader { geometry in
-            NavigationView {
-                self.content
-                    .navigationTitle("Feeds")
-            }
-            .navigationViewStyle(DoubleColumnNavigationViewStyle())
-//        }
+        NavigationView {
+            self.content
+                .navigationTitle("Feeds")
+        }
+        .navigationViewStyle(DoubleColumnNavigationViewStyle())
         .onReceive(routingUpdate) { self.routingState = $0 }
     }
     
