@@ -10,6 +10,7 @@ import Combine
 
 struct FeedItem: View {
     
+    private let feedData: Feed
     @State private(set) var feed: Loadable<Feed>
     @State private var routingState: Routing = .init()
     @Environment(\.injected) private var injected: DIContainer
@@ -17,23 +18,44 @@ struct FeedItem: View {
         $routingState.dispatched(to: injected.appState, \.routing.feedItem)
     }
     
-    init(feed: Loadable<Feed>) {
+    init(_ feedData: Feed, feed: Loadable<Feed> = .notRequested) {
+        self.feedData = feedData
         self._feed = .init(initialValue: feed)
     }
     
     var body: some View {
-        self.content
+//        self.content
+        GeometryReader { geometry in
+            VStack(alignment: .leading) {
+                HStack {
+                    CircleImage(image: Image("turtlerock"))
+                        .scaleEffect(1.0 / 3.0)
+                    
+                    Text("\(feedData.username)")
+                        .font(.callout)
+                        .bold()
+                    Spacer()
+                    
+                    Text("\(feedData.likes) Likes")
+                }
+                
+                CustomVideoPlayer(feed: feedData)
+                    .frame(width: 320, height: 230, alignment: .leading)
+                
+                Divider()
+            }
+        }
     }
     
     @ViewBuilder private var content: some View {
         switch feed {
         case .notRequested:
             notRequestedView()
-        case .isLoading(last: feed, cancelBag: _):
+        case .isLoading(_, _):
             loadingView()
-        case .loaded(feed):
+        case .loaded(let feed):
             loadedView(feed, isLoading: false)
-        case.failed(let error):
+        case.failed(_):
             failedView()
         }
     }
@@ -46,7 +68,7 @@ extension FeedItem {
 }
 
 private extension FeedItem {
-    func loadedView(_ feed: Loadable<Feed>, isLoading: Bool) -> some View {
+    func loadedView(_ feed: Feed, isLoading: Bool) -> some View {
         VStack(alignment: .center) {
             HStack {
                 CircleImage(image: Image("turtlerock"))
@@ -60,8 +82,8 @@ private extension FeedItem {
                 Text("\(feed.likes) Likes")
             }
             
-//            CustomVideoPlayer(feed: feed)
-//                .frame(width: 320, height: 180, alignment: .center)
+            CustomVideoPlayer(feed: feed)
+                .frame(width: 320, height: 180, alignment: .center)
             
             Divider()
         }

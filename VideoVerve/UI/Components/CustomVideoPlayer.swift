@@ -16,7 +16,7 @@ struct CustomVideoPlayer: View {
 
     
     var body: some View {
-        GeometryReader { geometry in
+//        GeometryReader { geometry in
             VideoPlayer(player: player, videoOverlay: {
 //                if showOverlay {
 //                    Image("turtlerock")
@@ -28,7 +28,7 @@ struct CustomVideoPlayer: View {
 //                    let _ = player.play()
 //                }
             })
-            .ignoresSafeArea()
+//            .ignoresSafeArea()
 //            .frame(width: geometry.size.width * 16 / 9, height: geometry.size.height)
             
             .onAppear(perform: {
@@ -40,7 +40,7 @@ struct CustomVideoPlayer: View {
             .onTapGesture {
                 showOverlay.toggle()
             }
-        }
+//        }
     }
     
     func generateThumbImage(url: URL) -> UIImage {

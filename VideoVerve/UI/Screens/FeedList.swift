@@ -72,7 +72,7 @@ extension FeedList {
                     destination: self.detailsView(feed: feed),
                     tag: feed.postId,
                     selection: self.routingBinding.feedDetails) {
-                        FeedItem(feed: feed)
+                        FeedItem(feed)
                     }
                     .listRowSeparator(.hidden)
             }
