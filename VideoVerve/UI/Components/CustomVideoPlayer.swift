@@ -13,34 +13,31 @@ struct CustomVideoPlayer: View {
     @State private var showOverlay = false
     let feed: Feed
     private let player = AVPlayer(url: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4")!)
-
+    
     
     var body: some View {
-//        GeometryReader { geometry in
-            VideoPlayer(player: player, videoOverlay: {
-//                if showOverlay {
-//                    Image("turtlerock")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .ignoresSafeArea()
-//                }
-//                else {
-//                    let _ = player.play()
-//                }
-            })
-//            .ignoresSafeArea()
-//            .frame(width: geometry.size.width * 16 / 9, height: geometry.size.height)
-            
-            .onAppear(perform: {
-                player.isMuted = true
-            })
-            .onDisappear(perform: {
-                player.pause()
-            })
-            .onTapGesture {
-                showOverlay.toggle()
+        VideoPlayer(player: player, videoOverlay: {
+            if showOverlay {
+                Image("turtlerock")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .ignoresSafeArea()
             }
-//        }
+            else {
+                //                    let _ = player.play()
+            }
+        })
+        //            .ignoresSafeArea()
+        
+        .onAppear(perform: {
+            player.isMuted = true
+        })
+        .onDisappear(perform: {
+            player.pause()
+        })
+        .onTapGesture {
+            showOverlay.toggle()
+        }
     }
     
     func generateThumbImage(url: URL) -> UIImage {
