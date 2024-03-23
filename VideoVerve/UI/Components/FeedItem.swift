@@ -24,27 +24,19 @@ struct FeedItem: View {
     }
     
     var body: some View {
-//        self.content
-//        GeometryReader { geometry in
-            VStack(alignment: .leading) {
-                HStack {
-                    CircleImage(image: Image("turtlerock"))
-                        .scaleEffect(1.0 / 3.0)
-                    
-                    Text("\(feedData.username)")
-                        .font(.callout)
-                        .bold()
-                    Spacer()
-                    
-                    Text("\(feedData.likes) Likes")
-                }
-                
-                CustomVideoPlayer(feed: feedData)
-//                    .frame(width: 320, height: 230, alignment: .leading)
-                
-                Divider()
+        VStack(alignment: .leading) {
+            HStack {
+                CircleImage(image: Image("turtlerock"))
+                    .scaleEffect(1.0 / 3.0)
+                Text("\(feedData.username)")
+                    .font(.callout)
+                    .bold()
+                Spacer()
+                Text("\(feedData.likes) Likes")
             }
-//        }
+            CustomVideoPlayer(feed: feedData)
+            Divider()
+        }
     }
     
     @ViewBuilder private var content: some View {
@@ -63,7 +55,6 @@ struct FeedItem: View {
 
 extension FeedItem {
     struct Routing: Equatable {
-        
     }
 }
 
@@ -105,10 +96,8 @@ private extension FeedItem {
     }
 }
 
-//struct FeedItem_Previews: PreviewProvider {
-//    static var previews: some View {
-////        FeedItem(feed: Feed.mockedData[0])
-////            .previewLayout(.fixed(width: 375, height: 60))
-//        FeedItem(.loaded())
-//    }
-//}
+struct FeedItem_Previews: PreviewProvider {
+    static var previews: some View {
+        FeedItem(Feed.mockedData[0], feed: .notRequested)
+    }
+}
