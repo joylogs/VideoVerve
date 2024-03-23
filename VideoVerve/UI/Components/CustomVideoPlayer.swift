@@ -10,7 +10,7 @@ import AVKit
 
 struct CustomVideoPlayer: View {
     
-    @State private var showOverlay = false
+    @State private var showOverlay = true
     let feed: Feed
     private let player = AVPlayer(url: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4")!)
     
@@ -24,11 +24,9 @@ struct CustomVideoPlayer: View {
                     .ignoresSafeArea()
             }
             else {
-                //                    let _ = player.play()
+                let _ = player.play()
             }
-        })
-        //            .ignoresSafeArea()
-        
+        })        
         .onAppear(perform: {
             player.isMuted = true
         })
