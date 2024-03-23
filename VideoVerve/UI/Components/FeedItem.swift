@@ -25,7 +25,7 @@ struct FeedItem: View {
     
     var body: some View {
 //        self.content
-        GeometryReader { geometry in
+//        GeometryReader { geometry in
             VStack(alignment: .leading) {
                 HStack {
                     CircleImage(image: Image("turtlerock"))
@@ -40,11 +40,11 @@ struct FeedItem: View {
                 }
                 
                 CustomVideoPlayer(feed: feedData)
-                    .frame(width: 320, height: 230, alignment: .leading)
+//                    .frame(width: 320, height: 230, alignment: .leading)
                 
                 Divider()
             }
-        }
+//        }
     }
     
     @ViewBuilder private var content: some View {

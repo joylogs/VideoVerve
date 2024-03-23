@@ -75,7 +75,7 @@ extension FeedList {
                         FeedItem(feed)
                     }
                     .listRowSeparator(.hidden)
-            }
+            }.environment(\.defaultMinListRowHeight, 200)
             .toolbar {
                 Button {
                     showingProfile.toggle()
