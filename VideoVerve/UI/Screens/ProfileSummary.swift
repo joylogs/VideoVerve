@@ -76,7 +76,6 @@ extension ProfileSummary {
                 .bold()
                 .font(.title3)
             Divider()
-                .bold()
             
             List(profileFeeds) { profile in
                 ProfileRow(profile: profile)

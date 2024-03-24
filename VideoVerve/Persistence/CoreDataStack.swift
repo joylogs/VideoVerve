@@ -148,7 +148,11 @@ extension CoreDataStack {
         
         func dbFileURL(_ directory: FileManager.SearchPathDirectory,
                        _ domainMask: FileManager.SearchPathDomainMask) -> URL? {
-            return FileManager.default.urls(for: directory, in: domainMask).first?.appending(path: subPathToDB)
+            if #available(iOS 16, *) {
+                return FileManager.default.urls(for: directory, in: domainMask).first?.appending(path: subPathToDB)
+            } else {
+                return FileManager.default.urls(for: directory, in: domainMask).first?.appendingPathComponent(subPathToDB)
+            }
         }
         
     }
