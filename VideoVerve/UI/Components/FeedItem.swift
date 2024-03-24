@@ -33,10 +33,14 @@ struct FeedItem: View {
                     .bold()
                 Spacer()
                 Text("\(feedData.likes) Likes")
+                    .font(.footnote)
+                    .fontWeight(.light)
             }
             CustomVideoPlayer(feed: feedData)
-            Divider()
+//            Divider()
         }
+        .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+        .border(.ultraThinMaterial)
     }
     
     @ViewBuilder private var content: some View {
@@ -60,23 +64,26 @@ extension FeedItem {
 
 private extension FeedItem {
     func loadedView(_ feed: Feed, isLoading: Bool) -> some View {
-        VStack(alignment: .center) {
-            HStack {
-                CircleImage(image: Image("turtlerock"))
-                    .scaleEffect(1.0 / 3.0)
+        ZStack {
+            VStack(alignment: .center) {
+                HStack {
+                    CircleImage(image: Image("turtlerock"))
+                        .scaleEffect(1.0 / 3.0)
+                    
+                    Text("\(feed.username)")
+                        .font(.callout)
+                        .bold()
+                    Spacer()
+                    
+                    Text("\(feed.likes) Likes")
+                }
                 
-                Text("\(feed.username)")
-                    .font(.callout)
-                    .bold()
-                Spacer()
+                CustomVideoPlayer(feed: feed)
+                    .frame(width: 320, height: 180, alignment: .center)
                 
-                Text("\(feed.likes) Likes")
+                Divider()
             }
-            
-            CustomVideoPlayer(feed: feed)
-                .frame(width: 320, height: 180, alignment: .center)
-            
-            Divider()
+            Rectangle()
         }
     }
 }

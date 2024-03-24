@@ -76,16 +76,16 @@ extension FeedList {
                     }
                     .listRowSeparator(.hidden)
             }.environment(\.defaultMinListRowHeight, 200)
-            .toolbar {
-                Button {
-                    showingProfile.toggle()
-                } label: {
-                    Label("User Profile", systemImage: "person.crop.circle")
-                }
-            }
-            .sheet(isPresented: $showingProfile) {
-                ProfileSummary()
-            }
+//            .toolbar {
+//                Button {
+//                    showingProfile.toggle()
+//                } label: {
+//                    Label("User Profile", systemImage: "person.crop.circle")
+//                }
+//            }
+//            .sheet(isPresented: $showingProfile) {
+//                ProfileSummary()
+//            }
             .refreshable {
                 DispatchQueue.main.async {
                     self.reloadFeeds()

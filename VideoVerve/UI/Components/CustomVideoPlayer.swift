@@ -22,7 +22,7 @@ struct CustomVideoPlayer: View {
                 Image(uiImage: thumbImage)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .ignoresSafeArea()
+//                    .ignoresSafeArea()
                     
             }
             else {
