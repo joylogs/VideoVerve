@@ -12,14 +12,34 @@ struct ContentView: View {
     private let container: DIContainer
     private let isRunningTests: Bool
     
+    enum TabItem {
+        case feed
+        case profile
+    }
+    
+    @State private var item: TabItem = .feed
+    
     init(container: DIContainer, isRunningTests: Bool = ProcessInfo.processInfo.isRunningTests) {
         self.container = container
         self.isRunningTests = isRunningTests
     }
-        
+            
     var body: some View {
-        FeedList()
-            .inject(container)
+        TabView(selection: $item) {
+            FeedList()
+                .tabItem {
+                    Label("Feeds", systemImage: "video.circle.fill")
+                }
+                .tag(TabItem.feed)
+                .inject(container)
+            
+            ProfileSummary()
+                .tabItem {
+                    Label("Profile", systemImage: "person.circle.fill")
+                }
+                .tag(TabItem.profile)
+                .inject(container)
+        }
     }
 }
 
