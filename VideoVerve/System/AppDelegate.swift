@@ -31,8 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func sceneDelegate(_ application: UIApplication) -> SceneDelegate? {
-        return application.windows
-            .compactMap({ $0.windowScene?.delegate as? SceneDelegate })
-            .first
+        let windowScene = application.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        return sceneDelegate
     }
 }
