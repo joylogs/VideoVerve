@@ -11,13 +11,12 @@ struct ContentView: View {
     
     private let container: DIContainer
     private let isRunningTests: Bool
+    @State private var item: TabItem = .feed
     
     enum TabItem {
         case feed
         case profile
     }
-    
-    @State private var item: TabItem = .feed
     
     init(container: DIContainer, isRunningTests: Bool = ProcessInfo.processInfo.isRunningTests) {
         self.container = container
